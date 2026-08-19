@@ -1,0 +1,16 @@
+{
+  "version": "2026.08.1",
+  "selectors": {
+    "submitButton": [
+      "[data-testid='btn-invia-messaggio']",
+      "button[aria-label='Invia']",
+      "form.chat-box button[type='submit']",
+      ".old-class-btn"
+    ],
+    "inputBox": [
+      "#chat-prompt-textarea",
+      "div[contenteditable='true'][role='textbox']",
+      "textarea[name='message']"
+    ]
+  }
+}
