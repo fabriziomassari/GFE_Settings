@@ -1,16 +1,22 @@
 {
   "version": "2026.08.1",
   "selectors": {
-    "submitButton": [
-      "[data-testid='btn-invia-messaggio']",
-      "button[aria-label='Invia']",
-      "form.chat-box button[type='submit']",
-      ".old-class-btn"
-    ],
-    "inputBox": [
-      "#chat-prompt-textarea",
-      "div[contenteditable='true'][role='textbox']",
-      "textarea[name='message']"
-    ]
-  }
+    "sidebarContainer": "bard-sidenav, side-navigation-v2, .sidenav-with-history-container",
+    "chatsSection": "expandable-section[data-test-id=\"chats-expandable-section\"]",
+    "conversationsList": "conversations-list[data-test-id=\"all-conversations\"]",
+    "chatItem": "gem-nav-list-item[data-test-id=\"conversation\"] a, a[href*=\"/app/\"]",
+    "chatTitle": ".title-text",
+    "recentHistoryIcon": "[fonticon=\"history\"], [data-mat-icon-name=\"history\"]"
+  },
+  "features": {
+    "enableDirectInjection": true,
+    "enableDragAndDrop": true,
+    "enableAiCategorization": true,
+    "enableStrategicSynthesis": true,
+    "maintenanceBanner": {
+      "active": false,
+      "message": ""
+    }
+  },
+  "minExtensionVersion": "5.11.0"
 }
