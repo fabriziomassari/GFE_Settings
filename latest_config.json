@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "configVersion": "2026.08.19.1",
-  "minExtensionVersion": "5.11.0",
+  "configVersion": "2026.08.19.2",
+  "minExtensionVersion": "5.12.0",
   "ttlHours": 6,
   "selectors": {
     "sidebarContainer": "bard-sidenav, side-navigation-v2, .sidenav-with-history-container",
