@@ -25,8 +25,8 @@
   },
   "features": {
     "maintenance": {
-      "active": true,
-      "message": "Messaggio di prova"
+      "active": false,
+      "message": ""
     }
   }
 }
