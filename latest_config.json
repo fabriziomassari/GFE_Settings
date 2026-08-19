@@ -1,1 +1,32 @@
-{}
+{
+  "schemaVersion": 1,
+  "configVersion": "2026.08.19.1",
+  "minExtensionVersion": "5.11.0",
+  "ttlHours": 6,
+  "selectors": {
+    "sidebarContainer": "bard-sidenav, side-navigation-v2, .sidenav-with-history-container",
+    "sidebarHistoryContainer": ".sidenav-with-history-container",
+    "newLayoutChatsSection": "expandable-section[data-test-id=\"chats-expandable-section\"]",
+    "conversationsListContainer": "conversations-list[data-test-id=\"all-conversations\"]",
+    "chatItem": "conversations-list[data-test-id=\"all-conversations\"] gem-nav-list-item[data-test-id=\"conversation\"] a, conversations-list[data-test-id=\"all-conversations\"] a[href*=\"/app/\"], conversations-list[data-test-id=\"all-conversations\"] a[href*=\"/chat/\"]",
+    "chatTitle": ".title-text",
+    "scroller": "infinite-scroller, main infinite-scroller, conversations-list[data-test-id=\"all-conversations\"]",
+    "userProfileBtn": "a[href*=\"accounts.google.com/SignOutOptions\"], button[aria-label*=\"@\"]",
+    "userProfileImg": "img[src*=\"googleusercontent.com/a/\"]",
+    "myStuffBtn": "side-nav-entry-button[data-test-id=\"my-stuff-side-nav-entry-button\"]",
+    "signInLink": "a[href*=\"/signin\"], a[href*=\"ServiceLogin\"], a[href*=\"accounts.google.com\"]",
+    "gemHeader": ".gems-list-container .title-container"
+  },
+  "heuristics": {
+    "historyIcon": "[fonticon=\"history\"], [data-mat-icon-name=\"history\"]",
+    "chatRoutePattern": "/app/[a-f0-9]{16,}",
+    "chatRoutePrefix": "/app/",
+    "legacyChatRoutePrefix": "/chat/"
+  },
+  "features": {
+    "maintenance": {
+      "active": false,
+      "message": ""
+    }
+  }
+}
