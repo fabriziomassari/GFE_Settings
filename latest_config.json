@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "configVersion": "2026.08.19.2",
+  "configVersion": "2026.08.22.1",
   "minExtensionVersion": "5.12.0",
   "ttlHours": 6,
   "selectors": {
@@ -8,7 +8,7 @@
     "sidebarHistoryContainer": ".sidenav-with-history-container",
     "newLayoutChatsSection": "expandable-section[data-test-id=\"chats-expandable-section\"], expandable-section[storagekey=\"chats\"]",
     "conversationsListContainer": "conversations-list[data-test-id=\"all-conversations\"], conversations-list",
-    "chatItem": "conversations-list[data-test-id=\"all-conversations\"] gem-nav-list-item[data-test-id=\"conversation\"] a, conversations-list[data-test-id=\"all-conversations\"] a[href*=\"/app/\"], conversations-list[data-test-id=\"all-conversations\"] a[href*=\"/chat/\"], conversations-list a[href*=\"/app/\"]",
+    "chatItem": "gem-nav-list-item[data-test-id=\"conversation\"] a, a[href*=\"/app/\"], a[href*=\"/chat/\"]",
     "chatTitle": ".title-text",
     "scroller": "infinite-scroller, main infinite-scroller, conversations-list[data-test-id=\"all-conversations\"]",
     "userProfileBtn": "a[href*=\"accounts.google.com/SignOutOptions\"], button[aria-label*=\"@\"]",
