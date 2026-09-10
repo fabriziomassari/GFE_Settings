@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Benvenuto in Gemini Chat Folders</title>
+  <style>
+    :root {
+      --bg-color: #0f172a;
+      --card-bg: #1e293b;
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --primary: #38bdf8;
+      --primary-hover: #0ea5e9;
+      --border: #334155;
+    }
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-main);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      box-sizing: border-box;
+    }
+    .container {
+      width: 100%;
+      max-width: 680px;
+      margin: 32px 16px;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 40px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+    }
+    .lang-switcher {
+      display: flex;
+      justify-content: flex-end;
+      gap: 8px;
+      margin-bottom: 20px;
+    }
+    .lang-btn {
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      padding: 4px 10px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 12px;
+      font-weight: 500;
+    }
+    .lang-btn.active {
+      color: var(--text-main);
+      border-color: var(--primary);
+      background-color: rgba(56, 189, 248, 0.1);
+    }
+    h1 {
+      margin-top: 0;
+      font-size: 26px;
+      color: var(--text-main);
+      line-height: 1.3;
+    }
+    p {
+      color: var(--text-muted);
+      line-height: 1.6;
+      font-size: 15px;
+    }
+    .features {
+      margin: 24px 0;
+      display: grid;
+      gap: 16px;
+    }
+    .feature-item {
+      background: rgba(15, 23, 42, 0.6);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 16px;
+    }
+    .feature-title {
+      font-weight: 600;
+      color: var(--text-main);
+      margin-bottom: 4px;
+      font-size: 15px;
+    }
+    .feature-desc {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin: 0;
+    }
+    .cta-container {
+      margin-top: 32px;
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .btn {
+      display: inline-block;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 600;
+      padding: 12px 24px;
+      border-radius: 8px;
+      transition: background-color 0.2s ease;
+      cursor: pointer;
+    }
+    .btn-primary {
+      background-color: var(--primary);
+      color: #0f172a;
+    }
+    .btn-primary:hover {
+      background-color: var(--primary-hover);
+    }
+    .btn-secondary {
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--text-main);
+    }
+    .btn-secondary:hover {
+      background-color: rgba(255, 255, 255, 0.05);
+    }
+    .footer {
+      margin-top: 32px;
+      font-size: 12px;
+      color: #64748b;
+      text-align: center;
+      border-top: 1px solid var(--border);
+      padding-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="lang-switcher">
+      <button class="lang-btn" id="btn-it" onclick="setLanguage('it')">Italiano</button>
+      <button class="lang-btn" id="btn-en" onclick="setLanguage('en')">English</button>
+    </div>
+
+    <!-- Contenuto Italiano -->
+    <div id="content-it">
+      <h1>Grazie per aver installato Gemini Chat Folders!</h1>
+      <p>L'estensione e' pronta all'uso. Ora puoi organizzare le tue conversazioni con Gemini in cartelle annidate, personalizzare i colori, sincronizzare la cronologia ed esplorare l'assistenza intelligente.</p>
+
+      <div class="features">
+        <div class="feature-item">
+          <div class="feature-title">Cartelle e Sottocartelle</div>
+          <p class="feature-desc">Crea strutture ad albero illimitate per catalogare i tuoi progetti di lavoro, studio e tempo libero.</p>
+        </div>
+        <div class="feature-item">
+          <div class="feature-title">Privacy e Salvataggio Diretto</div>
+          <p class="feature-desc">Le tue cartelle rimangono salvate esclusivamente nel tuo browser e nel tuo profilo di sincronizzazione sicuro.</p>
+        </div>
+        <div class="feature-item">
+          <div class="feature-title">Pannello Laterale Dedicato</div>
+          <p class="feature-desc">Accedi alle cartelle in qualunque momento tramite la barra laterale integrata di Chrome.</p>
+        </div>
+      </div>
+
+      <div class="cta-container">
+        <a href="https://gemini.google.com" target="_blank" class="btn btn-primary">Apri Google Gemini</a>
+        <a href="https://github.com/fabriziomassari/gemini-folder-extension" target="_blank" class="btn btn-secondary">Repository GitHub</a>
+      </div>
+
+      <div class="footer">
+        Gemini Chat Folders &bull; Progetto Open Source &bull; Rispetto totale della privacy dell'utente
+      </div>
+    </div>
+
+    <!-- Contenuto Inglese -->
+    <div id="content-en" style="display: none;">
+      <h1>Thank you for installing Gemini Chat Folders!</h1>
+      <p>The extension is ready to use. You can now organize your Gemini conversations into nested folders, customize colors, synchronize your history, and leverage intelligent organization.</p>
+
+      <div class="features">
+        <div class="feature-item">
+          <div class="feature-title">Folders & Nested Subfolders</div>
+          <p class="feature-desc">Create unlimited tree hierarchies to structure your work, research, and personal chats.</p>
+        </div>
+        <div class="feature-item">
+          <div class="feature-title">Privacy & Local Storage</div>
+          <p class="feature-desc">Your folders stay securely stored in your browser and encrypted sync storage.</p>
+        </div>
+        <div class="feature-item">
+          <div class="feature-title">Dedicated Side Panel</div>
+          <p class="feature-desc">Access your folders anytime using Chrome's native side panel.</p>
+        </div>
+      </div>
+
+      <div class="cta-container">
+        <a href="https://gemini.google.com" target="_blank" class="btn btn-primary">Open Google Gemini</a>
+        <a href="https://github.com/fabriziomassari/gemini-folder-extension" target="_blank" class="btn btn-secondary">GitHub Repository</a>
+      </div>
+
+      <div class="footer">
+        Gemini Chat Folders &bull; Open Source Project &bull; Strict User Privacy Standards
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function setLanguage(lang) {
+      const itContent = document.getElementById('content-it');
+      const enContent = document.getElementById('content-en');
+      const itBtn = document.getElementById('btn-it');
+      const enBtn = document.getElementById('btn-en');
+
+      if (lang === 'it') {
+        itContent.style.display = 'block';
+        enContent.style.display = 'none';
+        itBtn.classList.add('active');
+        enBtn.classList.remove('active');
+      } else {
+        itContent.style.display = 'none';
+        enContent.style.display = 'block';
+        enBtn.classList.add('active');
+        itBtn.classList.remove('active');
+      }
+    }
+
+    // Rileva la lingua dell'utente all'avvio
+    const userLang = (navigator.language || navigator.userLanguage || 'en').toLowerCase();
+    if (userLang.startsWith('it')) {
+      setLanguage('it');
+    } else {
+      setLanguage('en');
+    }
+
+    // Tracciamento anonimo di installazione su PostHog EU (nessun dato sensibile, IP mascherato)
+    (function() {
+      try {
+        const params = new URLSearchParams(window.location.search);
+        const version = params.get('v') || '5.16.0';
+        let webId = localStorage.getItem('gfe_welcome_did');
+        if (!webId) {
+          webId = 'w_' + Math.random().toString(36).substring(2, 10) + Date.now().toString(36);
+          localStorage.setItem('gfe_welcome_did', webId);
+        }
+
+        fetch('https://eu.i.posthog.com/capture/', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            api_key: 'phc_zebLXH5VGh9AQtGzz3bDkgRPYz83AHvBw3Ao78h6qmca',
+            event: 'extension_installed',
+            properties: {
+              distinct_id: webId,
+              version: version,
+              $ip: null,
+              source: 'welcome_page'
+            }
+          })
+        }).catch(function() {
+          // Ignora errori di rete
+        });
+      } catch (e) {
+        // Nessun blocco per l'utente
+      }
+    })();
+  </script>
+</body>
+</html>
