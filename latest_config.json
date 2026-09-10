@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "configVersion": "2026.08.22.2",
+  "configVersion": "2026.09.10.1",
   "minExtensionVersion": "5.12.0",
   "ttlHours": 6,
   "selectors": {
@@ -14,6 +14,7 @@
     "userProfileBtn": "a[href*=\"accounts.google.com/SignOutOptions\"], button[aria-label*=\"@\"]",
     "userProfileImg": "img[src*=\"googleusercontent.com/a/\"]",
     "myStuffBtn": "side-nav-entry-button[data-test-id=\"my-stuff-side-nav-entry-button\"]",
+    "myStuffBtn_NOTE": "Rimuovere il selettore 'myStuffBtn'dalle versioni future non serve, lasciato solo per compatibilità.",
     "signInLink": "a[href*=\"/signin\"], a[href*=\"ServiceLogin\"], a[href*=\"accounts.google.com\"]",
     "gemHeader": ".gems-list-container .title-container"
   },
@@ -27,6 +28,15 @@
     "maintenance": {
       "active": false,
       "message": ""
+    },
+    "telemetry": {
+      "enabled": true,
+      "posthogApiKey": "phc_zebLXH5VGh9AQtGzz3bDkgRPYz83AHvBw3Ao78h6qmca",
+      "sampleRate": 0.25,
+      "granularity": "macro",
+      "dailyMaxEvents": 50,
+      "dailyMaxErrors": 5,
+      "errorTracking": true
     }
   }
 }
