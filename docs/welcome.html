@@ -39,23 +39,27 @@
     .lang-switcher {
       display: flex;
       justify-content: flex-end;
-      gap: 8px;
       margin-bottom: 20px;
     }
-    .lang-btn {
-      background: transparent;
+    .lang-select {
+      background: rgba(15, 23, 42, 0.8);
       border: 1px solid var(--border);
-      color: var(--text-muted);
-      padding: 4px 10px;
+      color: var(--text-main);
+      padding: 6px 12px;
       border-radius: 6px;
       cursor: pointer;
-      font-size: 12px;
+      font-size: 13px;
       font-weight: 500;
+      outline: none;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
     }
-    .lang-btn.active {
-      color: var(--text-main);
+    .lang-select:focus {
       border-color: var(--primary);
-      background-color: rgba(56, 189, 248, 0.1);
+      box-shadow: 0 0 0 2px rgba(56, 189, 248, 0.2);
+    }
+    .lang-select option {
+      background: var(--card-bg);
+      color: var(--text-main);
     }
     h1 {
       margin-top: 0;
@@ -135,8 +139,10 @@
 
   <div class="container">
     <div class="lang-switcher">
-      <button class="lang-btn" id="btn-it" onclick="setLanguage('it')">Italiano</button>
-      <button class="lang-btn" id="btn-en" onclick="setLanguage('en')">English</button>
+      <select id="lang-select" class="lang-select" onchange="setLanguage(this.value)" aria-label="Seleziona lingua / Select language">
+        <option value="it">Italiano</option>
+        <option value="en">English</option>
+      </select>
     </div>
 
     <!-- Contenuto Italiano -->
@@ -202,19 +208,20 @@
     function setLanguage(lang) {
       const itContent = document.getElementById('content-it');
       const enContent = document.getElementById('content-en');
-      const itBtn = document.getElementById('btn-it');
-      const enBtn = document.getElementById('btn-en');
+      const select = document.getElementById('lang-select');
+
+      if (select && select.value !== lang) {
+        select.value = lang;
+      }
 
       if (lang === 'it') {
         itContent.style.display = 'block';
         enContent.style.display = 'none';
-        itBtn.classList.add('active');
-        enBtn.classList.remove('active');
+        document.documentElement.lang = 'it';
       } else {
         itContent.style.display = 'none';
         enContent.style.display = 'block';
-        enBtn.classList.add('active');
-        itBtn.classList.remove('active');
+        document.documentElement.lang = 'en';
       }
     }
 
@@ -226,16 +233,11 @@
       setLanguage('en');
     }
 
-    // Tracciamento anonimo di installazione su PostHog EU (nessun dato sensibile, IP mascherato)
+    // Tracciamento completamente anonimo di installazione su PostHog EU (nessun dato personale, IP mascherato)
     (function() {
       try {
         const params = new URLSearchParams(window.location.search);
-        const version = params.get('v') || '5.16.0';
-        let webId = localStorage.getItem('gfe_welcome_did');
-        if (!webId) {
-          webId = 'w_' + Math.random().toString(36).substring(2, 10) + Date.now().toString(36);
-          localStorage.setItem('gfe_welcome_did', webId);
-        }
+        const version = params.get('v') || '5.16.16';
 
         fetch('https://eu.i.posthog.com/capture/', {
           method: 'POST',
@@ -243,8 +245,13 @@
           body: JSON.stringify({
             api_key: 'phc_zebLXH5VGh9AQtGzz3bDkgRPYz83AHvBw3Ao78h6qmca',
             event: 'extension_installed',
+            distinct_id: 'non_disponibile',
             properties: {
-              distinct_id: webId,
+              distinct_id: 'non_disponibile',
+              user_id: 'non_disponibile',
+              device_id: 'non_disponibile',
+              user_anonymous_id: 'non_disponibile',
+              device_anonymous_id: 'non_disponibile',
               version: version,
               $ip: null,
               source: 'welcome_page'
