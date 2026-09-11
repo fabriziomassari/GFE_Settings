@@ -60,7 +60,7 @@
     </ol>
 
     <div class="highlight-box">
-        <p><strong>Strict Privacy Guarantees:</strong> All telemetry traffic is routed to servers within the European Union (Frankfurt, Germany) under full GDPR compliance. Client IP addresses are discarded immediately upon connection and never written to database storage (<code>$ip: null</code>). We never collect Personally Identifiable Information (PII), email addresses, credentials, or Gemini chat conversations.</p>
+        <p><strong>Strict Privacy Guarantees:</strong> All telemetry traffic is routed to servers within the European Union (Frankfurt, Germany) under full GDPR compliance. Client IP addresses are discarded immediately upon connection and never written to database storage (<code>$ip: null</code>). We never collect Personally Identifiable Information (PII), email addresses, credentials, or Gemini chat conversations. Furthermore, opening public documentation, help, welcome, uninstall, and release notes pages records only aggregate anonymous page view counters (with <code>user_id</code> and <code>device_id</code> permanently set to <code>"non_disponibile"</code>), fully outside the scope of personal data processing.</p>
     </div>
 
     <h2>How We Use Your Data</h2>
@@ -109,7 +109,7 @@
         </ol>
 
         <div class="highlight-box">
-            <p><strong>Garanzie Rigorose di Privacy:</strong> Tutto il traffico di telemetria è diretto a server all'interno dell'Unione Europea (Francoforte, Germania) in piena conformità GDPR. Gli indirizzi IP dei client vengono scartati immediatamente all'arrivo e mai registrati su database (<code>$ip: null</code>). Non raccogliamo alcuna informazione personale identificabile (PII), indirizzi email, credenziali, o testi e risposte delle chat di Gemini.</p>
+            <p><strong>Garanzie Rigorose di Privacy:</strong> Tutto il traffico di telemetria è diretto a server all'interno dell'Unione Europea (Francoforte, Germania) in piena conformità GDPR. Gli indirizzi IP dei client vengono scartati immediatamente all'arrivo e mai registrati su database (<code>$ip: null</code>). Non raccogliamo alcuna informazione personale identificabile (PII), indirizzi email, credenziali, o testi e risposte delle chat di Gemini. Inoltre, l'apertura delle pagine di documentazione, guida, benvenuto, disinstallazione e changelog registra unicamente contatori statistici aggregati totalmente anonimi (con <code>user_id</code> e <code>device_id</code> impostati permanentemente a <code>"non_disponibile"</code>), operando al di fuori dell'ambito dei dati personali (Considerando 26 GDPR).</p>
         </div>
 
         <h2>Utilizzo dei Dati</h2>
@@ -137,12 +137,10 @@
     </div>
 
     <script>
-      // Tracciamento anonimo apertura Privacy Policy su PostHog EU (Francoforte)
+      // Tracciamento completamente anonimo apertura Privacy Policy su PostHog EU (Francoforte)
       (function() {
         try {
           const params = new URLSearchParams(window.location.search);
-          const uid = params.get('uid') || params.get('user_id') || 'non_disponibile';
-          const did = params.get('did') || params.get('device_id') || 'non_disponibile';
           const version = params.get('v') || params.get('version') || params.get('versione') || 'non_disponibile';
 
           fetch('https://eu.i.posthog.com/capture/', {
@@ -151,12 +149,13 @@
             body: JSON.stringify({
               api_key: 'phc_zebLXH5VGh9AQtGzz3bDkgRPYz83AHvBw3Ao78h6qmca',
               event: 'privacy_policy_opened',
+              distinct_id: 'non_disponibile',
               properties: {
-                distinct_id: did !== 'non_disponibile' ? did : (uid !== 'non_disponibile' ? uid : 'non_disponibile'),
-                user_id: uid,
-                device_id: did,
-                user_anonymous_id: uid,
-                device_anonymous_id: did,
+                distinct_id: 'non_disponibile',
+                user_id: 'non_disponibile',
+                device_id: 'non_disponibile',
+                user_anonymous_id: 'non_disponibile',
+                device_anonymous_id: 'non_disponibile',
                 version: version,
                 versione: version,
                 $ip: null,
