@@ -9,4 +9,6 @@ accessibili con link Github Pages, che ha come root "/docs":
 * https://fabriziomassari.github.io/GFE_Settings/welcome.html 
 * https://fabriziomassari.github.io/GFE_Settings/uninstall.html
 
-  
+## pagina per la privacy policy
+
+* https://fabriziomassari.github.io/GFE_Settings/PrivacyPolicyGFE.html
