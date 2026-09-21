@@ -1,20 +1,18 @@
 {
   "schemaVersion": 1,
-  "configVersion": "2026.09.10.1",
+  "configVersion": "2026.09.21.1",
   "minExtensionVersion": "5.12.0",
   "ttlHours": 6,
   "selectors": {
     "sidebarContainer": "bard-sidenav, side-navigation-v2, .sidenav-with-history-container",
     "sidebarHistoryContainer": ".sidenav-with-history-container",
     "newLayoutChatsSection": "expandable-section[data-test-id=\"chats-expandable-section\"], expandable-section[storagekey=\"chats\"]",
-    "conversationsListContainer": "conversations-list[data-test-id=\"all-conversations\"]",
+    "conversationsListContainer": "conversations-list[data-test-id=\"all-conversations\"], conversations-list",
     "chatItem": "gem-nav-list-item[data-test-id=\"conversation\"] a, a[href*=\"/app/\"], a[href*=\"/chat/\"]",
     "chatTitle": ".title-text",
     "scroller": "infinite-scroller, main infinite-scroller, conversations-list[data-test-id=\"all-conversations\"]",
     "userProfileBtn": "a[href*=\"accounts.google.com/SignOutOptions\"], button[aria-label*=\"@\"]",
     "userProfileImg": "img[src*=\"googleusercontent.com/a/\"]",
-    "myStuffBtn": "side-nav-entry-button[data-test-id=\"my-stuff-side-nav-entry-button\"]",
-    "myStuffBtn_NOTE": "Rimuovere il selettore 'myStuffBtn'dalle versioni future non serve, lasciato solo per compatibilità.",
     "signInLink": "a[href*=\"/signin\"], a[href*=\"ServiceLogin\"], a[href*=\"accounts.google.com\"]",
     "gemHeader": ".gems-list-container .title-container"
   },
