@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Novità - Gemini Chat Folders</title>
+  <style>
+    :root {
+      --bg-color: #0f172a;
+      --card-bg: #1e293b;
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --primary: #38bdf8;
+      --primary-hover: #0ea5e9;
+      --border: #334155;
+      --accent-badge: rgba(56, 189, 248, 0.15);
+      --badge-text: #38bdf8;
+    }
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-main);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      box-sizing: border-box;
+    }
+    .container {
+      width: 100%;
+      max-width: 720px;
+      margin: 32px 16px;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 40px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+    }
+    .header-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 24px;
+      gap: 16px;
+    }
+    .badge {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 20px;
+      background: var(--accent-badge);
+      color: var(--badge-text);
+      margin-bottom: 8px;
+    }
+    .lang-select {
+      background: rgba(15, 23, 42, 0.8);
+      border: 1px solid var(--border);
+      color: var(--text-main);
+      padding: 6px 12px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 13px;
+      font-weight: 500;
+      outline: none;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+    .lang-select:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 2px rgba(56, 189, 248, 0.2);
+    }
+    .lang-select option {
+      background: var(--card-bg);
+      color: var(--text-main);
+    }
+    h1 {
+      margin: 0 0 8px 0;
+      font-size: 26px;
+      color: var(--text-main);
+      line-height: 1.3;
+    }
+    p.lead {
+      color: var(--text-muted);
+      line-height: 1.6;
+      font-size: 15px;
+      margin: 0;
+    }
+    .features {
+      margin: 28px 0;
+      display: grid;
+      gap: 14px;
+    }
+    .feature-item {
+      background: rgba(15, 23, 42, 0.6);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 18px;
+      transition: border-color 0.2s ease;
+    }
+    .feature-item:hover {
+      border-color: rgba(56, 189, 248, 0.4);
+    }
+    .feature-title {
+      font-weight: 600;
+      color: var(--text-main);
+      margin-bottom: 6px;
+      font-size: 15px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .feature-desc {
+      font-size: 13.5px;
+      color: var(--text-muted);
+      margin: 0;
+      line-height: 1.55;
+    }
+    .cta-container {
+      margin-top: 32px;
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    .btn {
+      display: inline-block;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 600;
+      padding: 12px 24px;
+      border-radius: 8px;
+      transition: background-color 0.2s ease, opacity 0.2s ease;
+      cursor: pointer;
+      text-align: center;
+    }
+    .btn-primary {
+      background-color: var(--primary);
+      color: #0f172a;
+      border: none;
+    }
+    .btn-primary:hover {
+      background-color: var(--primary-hover);
+    }
+    .btn-secondary {
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--text-main);
+    }
+    .btn-secondary:hover {
+      background-color: rgba(255, 255, 255, 0.05);
+    }
+    .note-box {
+      margin-top: 24px;
+      padding: 14px;
+      background: rgba(56, 189, 248, 0.05);
+      border: 1px dashed rgba(56, 189, 248, 0.3);
+      border-radius: 8px;
+      font-size: 12.5px;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+    .footer {
+      margin-top: 28px;
+      font-size: 12px;
+      color: #64748b;
+      text-align: center;
+      border-top: 1px solid var(--border);
+      padding-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="header-row">
+      <div>
+        <span class="badge" id="version-badge">Nuova Versione</span>
+        <h1 id="page-title">Novità di Gemini Chat Folders</h1>
+        <p class="lead" id="page-subtitle">Scopri le ultime funzionalità introdotte per rendere la tua produttività ancora più fluida ed efficace.</p>
+      </div>
+      <div>
+        <select id="lang-select" class="lang-select" onchange="setLanguage(this.value)" aria-label="Seleziona lingua / Select language">
+          <option value="it">Italiano</option>
+          <option value="en">English</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Contenuto Italiano -->
+    <div id="content-it">
+      <div class="features">
+        <div class="feature-item">
+          <div class="feature-title">Pannello Laterale Dedicato (Chrome Side Panel)</div>
+          <p class="feature-desc">Accedi alla tua intera struttura di cartelle, chat archiviate e strumenti di ricerca in qualunque momento tramite la barra laterale nativa di Google Chrome, senza occupare lo spazio visivo della conversazione attiva.</p>
+        </div>
+
+        <div class="feature-item">
+          <div class="feature-title">Intelligenza Artificiale Ibrida: Cloud o Locale</div>
+          <p class="feature-desc">Scegli come categorizzare e organizzare le tue chat: connettiti direttamente all'API ufficiale di Google Gemini o sfrutta server locali conformi a Ollama per un'elaborazione veloce, autonoma e a costo zero.</p>
+        </div>
+
+        <div class="feature-item">
+          <div class="feature-title">Esperienza di Benvenuto & Onboarding Trasparente</div>
+          <p class="feature-desc">Nuova gestione dell'onboarding con impostazioni chiare e immediate. Sei sempre tu a decidere se abilitare la diagnostica tecnica anonima o mantenere l'estensione completamente silenziosa.</p>
+        </div>
+
+        <div class="feature-item">
+          <div class="feature-title">Sincronizzazione Multi-Dispositivo & Ripristino Resiliente</div>
+          <p class="feature-desc">La tua gerarchia di cartelle si sincronizza in background attraverso il tuo account protetto Chrome. Il motore include una modalità di salvaguardia (Safe Mode) e strumenti di backup/ripristino per proteggere ogni conversazione.</p>
+        </div>
+
+        <div class="feature-item">
+          <div class="feature-title">Personalizzazione Avanzata di Colori e Ordinamento</div>
+          <p class="feature-desc">Assegna colori dedicati a cartelle primarie e sottocartelle, scegli se inserire le nuove chat in cima o in fondo, e personalizza i titoli del pannello per rispecchiare il tuo flusso di lavoro.</p>
+        </div>
+      </div>
+
+      <div class="note-box">
+        Puoi gestire l'apertura automatica di questa pagina in qualsiasi momento nelle <strong>Impostazioni</strong> dell'estensione (scheda <strong>Info</strong>).
+      </div>
+
+      <div class="cta-container">
+        <a href="https://gemini.google.com" target="_blank" class="btn btn-primary">Apri Google Gemini</a>
+        <button onclick="window.close()" class="btn btn-secondary">Chiudi questa scheda</button>
+      </div>
+
+      <div class="footer">
+        Gemini Chat Folders &bull; Rispetto totale della privacy &bull; Nessuna profilazione personale
+      </div>
+    </div>
+
+    <!-- Contenuto Inglese -->
+    <div id="content-en" style="display: none;">
+      <div class="features">
+        <div class="feature-item">
+          <div class="feature-title">Dedicated Chrome Side Panel</div>
+          <p class="feature-desc">Access your full folder structure, archived chats, and search utilities anytime through Google Chrome's native side panel without cluttering your main conversation window.</p>
+        </div>
+
+        <div class="feature-item">
+          <div class="feature-title">Hybrid AI Intelligence: Cloud or Local</div>
+          <p class="feature-desc">Choose your preferred AI workflow: connect directly to the official Google Gemini API or leverage local Ollama-compatible servers for fast, private, and cost-free categorization.</p>
+        </div>
+
+        <div class="feature-item">
+          <div class="feature-title">Transparent Onboarding & Privacy Controls</div>
+          <p class="feature-desc">Streamlined onboarding with granular controls. You maintain complete sovereignty over whether to contribute anonymous technical diagnostics or keep the extension fully silent.</p>
+        </div>
+
+        <div class="feature-item">
+          <div class="feature-title">Seamless Multi-Device Sync & Resilient Recovery</div>
+          <p class="feature-desc">Your custom folder tree syncs securely across your devices via your encrypted Chrome profile. Integrated Safe Mode and automated data repair tools keep your chats safe.</p>
+        </div>
+
+        <div class="feature-item">
+          <div class="feature-title">Advanced Styling, Color Palettes & Insertion Order</div>
+          <p class="feature-desc">Assign distinctive color tags to folders, configure chat insertion order (top, bottom, or chronological), and customize panel headings to fit your exact productivity habits.</p>
+        </div>
+      </div>
+
+      <div class="note-box">
+        You can disable the automatic display of this page at any time in the extension <strong>Settings</strong> (under the <strong>Info</strong> tab).
+      </div>
+
+      <div class="cta-container">
+        <a href="https://gemini.google.com" target="_blank" class="btn btn-primary">Open Google Gemini</a>
+        <button onclick="window.close()" class="btn btn-secondary">Close this tab</button>
+      </div>
+
+      <div class="footer">
+        Gemini Chat Folders &bull; Strict privacy standards &bull; Zero personal data profiling
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function setLanguage(lang) {
+      const itContent = document.getElementById('content-it');
+      const enContent = document.getElementById('content-en');
+      const select = document.getElementById('lang-select');
+      const title = document.getElementById('page-title');
+      const subtitle = document.getElementById('page-subtitle');
+      const badge = document.getElementById('version-badge');
+
+      if (select && select.value !== lang) {
+        select.value = lang;
+      }
+
+      if (lang === 'it') {
+        itContent.style.display = 'block';
+        enContent.style.display = 'none';
+        document.documentElement.lang = 'it';
+        title.textContent = 'Novità di Gemini Chat Folders';
+        subtitle.textContent = 'Scopri le ultime funzionalità introdotte per rendere la tua produttività ancora più fluida ed efficace.';
+        badge.textContent = 'Nuova Versione';
+      } else {
+        itContent.style.display = 'none';
+        enContent.style.display = 'block';
+        document.documentElement.lang = 'en';
+        title.textContent = "What's New in Gemini Chat Folders";
+        subtitle.textContent = 'Explore the latest enhancements designed to elevate your productivity and workspace organization.';
+        badge.textContent = 'New Release';
+      }
+    }
+
+    // Rileva la lingua dell'utente all'avvio
+    const userLang = (navigator.language || navigator.userLanguage || 'en').toLowerCase();
+    if (userLang.startsWith('it')) {
+      setLanguage('it');
+    } else {
+      setLanguage('en');
+    }
+
+    // Tracciamento del censimento anonimo una tantum:
+    // Scatta SOLO ed ESCLUSIVAMENTE se l'URL contiene il parametro ?census=1 o ?census=true.
+    // In tutti gli altri casi (aperture successive, link manuale), NESSUNA chiamata di rete viene eseguita.
+    (function() {
+      try {
+        const params = new URLSearchParams(window.location.search);
+        const isCensus = params.get('census') === '1' || params.get('census') === 'true';
+
+        if (!isCensus) {
+          return;
+        }
+
+        const version = params.get('v') || 'latest';
+
+        fetch('https://eu.i.posthog.com/capture/', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            api_key: 'phc_zebLXH5VGh9AQtGzz3bDkgRPYz83AHvBw3Ao78h6qmca',
+            event: 'extension_census',
+            distinct_id: 'non_disponibile',
+            properties: {
+              distinct_id: 'non_disponibile',
+              user_id: 'non_disponibile',
+              device_id: 'non_disponibile',
+              user_anonymous_id: 'non_disponibile',
+              device_anonymous_id: 'non_disponibile',
+              version: version,
+              browser_language: (typeof navigator !== 'undefined' ? navigator.language : ''),
+              $ip: null,
+              source: 'whats_new_page'
+            }
+          })
+        }).catch(function() {
+          // Ignora errori di rete
+        });
+      } catch (e) {
+        // Nessun blocco per l'utente
+      }
+    })();
+  </script>
+</body>
+</html>
