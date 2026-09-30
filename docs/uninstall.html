@@ -85,20 +85,32 @@
     .message-card p:last-child {
       margin-bottom: 0;
     }
+    .cta-container {
+      margin-top: 28px;
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
     .btn {
       display: inline-block;
       text-decoration: none;
       font-size: 14px;
       font-weight: 600;
-      padding: 10px 20px;
+      padding: 12px 24px;
       border-radius: 8px;
-      transition: background-color 0.2s ease;
+      transition: background-color 0.2s ease, opacity 0.2s ease;
       cursor: pointer;
+      text-align: center;
+      font-family: inherit;
+      box-sizing: border-box;
+    }
+    .btn-secondary {
       background: transparent;
       border: 1px solid var(--border);
       color: var(--text-main);
     }
-    .btn:hover {
+    .btn-secondary:hover {
       background-color: rgba(255, 255, 255, 0.05);
     }
     .footer {
@@ -118,6 +130,12 @@
       <select id="lang-select" class="lang-select" onchange="setLanguage(this.value)" aria-label="Seleziona lingua / Select language">
         <option value="it">Italiano</option>
         <option value="en">English</option>
+        <option value="es">Español</option>
+        <option value="pt_BR">Português (Brasil)</option>
+        <option value="ja">日本語</option>
+        <option value="ko">한국어</option>
+        <option value="zh_CN">简体中文</option>
+        <option value="zh_TW">繁體中文</option>
       </select>
     </div>
 
@@ -129,6 +147,10 @@
       <div class="message-card">
         <p>Siamo spiacenti di vederti andare via. Speriamo che lo strumento ti sia stato utile per organizzare le tue conversazioni su Gemini.</p>
         <p>Se in futuro vorrai riprovare l'estensione, potrai sempre reinstallarla comodamente dal Chrome Web Store.</p>
+      </div>
+
+      <div class="cta-container">
+        <button type="button" class="btn btn-secondary" onclick="window.close()">Chiudi questa pagina</button>
       </div>
 
       <div class="footer">
@@ -146,6 +168,125 @@
         <p>If you wish to try the extension again in the future, you can reinstall it anytime from the Chrome Web Store.</p>
       </div>
 
+      <div class="cta-container">
+        <button type="button" class="btn btn-secondary" onclick="window.close()">Close this page</button>
+      </div>
+
+      <div class="footer">
+        Gemini Chat Folders
+      </div>
+    </div>
+
+  
+    <!-- Spanish Content -->
+    <div id="content-es" style="display: none;">
+      <h1>Gracias por usar Gemini Chat Folders</h1>
+      <p>La extensión se ha eliminado correctamente de tu navegador.</p>
+
+      <div class="message-card">
+        <p>Lamentamos que te vayas. Esperamos que la herramienta te haya sido útil para organizar tus conversaciones en Gemini.</p>
+        <p>Si en el futuro deseas volver a probar la extensión, siempre podrás reinstalarla cómodamente desde Chrome Web Store.</p>
+      </div>
+
+      <div class="cta-container">
+        <button type="button" class="btn btn-secondary" onclick="window.close()">Cerrar esta página</button>
+      </div>
+
+      <div class="footer">
+        Gemini Chat Folders
+      </div>
+    </div>
+
+    <!-- Portuguese Content -->
+    <div id="content-pt_BR" style="display: none;">
+      <h1>Obrigado por usar o Gemini Chat Folders</h1>
+      <p>A extensão foi removida com sucesso do seu navegador.</p>
+
+      <div class="message-card">
+        <p>Lamentamos ver você partir. Esperamos que a ferramenta tenha sido útil para organizar suas conversas no Gemini.</p>
+        <p>Se desejar testar a extensão novamente no futuro, você sempre poderá reinstalá-la comodamente pela Chrome Web Store.</p>
+      </div>
+
+      <div class="cta-container">
+        <button type="button" class="btn btn-secondary" onclick="window.close()">Fechar esta página</button>
+      </div>
+
+      <div class="footer">
+        Gemini Chat Folders
+      </div>
+    </div>
+
+    <!-- Japanese Content -->
+    <div id="content-ja" style="display: none;">
+      <h1>Gemini Chat Folders をご利用いただきありがとうございました</h1>
+      <p>拡張機能はブラウザから正常に削除されました。</p>
+
+      <div class="message-card">
+        <p>ご利用の終了を残念に思いますが、Geminiでの会話整理に本ツールがお役に立てたことを願っております。</p>
+        <p>将来また本拡張機能をお試しになりたい場合は、いつでもChromeウェブストアから手軽に再インストールしていただけます。</p>
+      </div>
+
+      <div class="cta-container">
+        <button type="button" class="btn btn-secondary" onclick="window.close()">このページを閉じる</button>
+      </div>
+
+      <div class="footer">
+        Gemini Chat Folders
+      </div>
+    </div>
+
+    <!-- Korean Content -->
+    <div id="content-ko" style="display: none;">
+      <h1>Gemini Chat Folders를 이용해 주셔서 감사합니다</h1>
+      <p>확장 프로그램이 브라우저에서 정상적으로 제거되었습니다.</p>
+
+      <div class="message-card">
+        <p>떠나시는 모습을 보게 되어 아쉽지만, 그동안 Gemini 대화를 정리하는 데 도움이 되었기를 바랍니다.</p>
+        <p>향후 확장 프로그램을 다시 이용하고 싶으시다면 언제든지 Chrome 웹 스토어에서 간편하게 다시 설치하실 수 있습니다.</p>
+      </div>
+
+      <div class="cta-container">
+        <button type="button" class="btn btn-secondary" onclick="window.close()">이 페이지 닫기</button>
+      </div>
+
+      <div class="footer">
+        Gemini Chat Folders
+      </div>
+    </div>
+
+    <!-- Simplified Chinese Content -->
+    <div id="content-zh_CN" style="display: none;">
+      <h1>感谢您使用 Gemini Chat Folders</h1>
+      <p>扩展程序已成功从您的浏览器中移除。</p>
+
+      <div class="message-card">
+        <p>很遗憾与您告别。希望本工具曾为您的 Gemini 对话整理带来过便利。</p>
+        <p>如果您将来希望再次体验本扩展，随时可以从 Chrome 网上应用店轻松重新安装。</p>
+      </div>
+
+      <div class="cta-container">
+        <button type="button" class="btn btn-secondary" onclick="window.close()">关闭此页面</button>
+      </div>
+
+      <div class="footer">
+        Gemini Chat Folders
+      </div>
+    </div>
+
+    <!-- Traditional Chinese Content -->
+    <div id="content-zh_TW" style="display: none;">
+      <h1>感謝您使用 Gemini Chat Folders</h1>
+      <p>擴充功能已成功自您的瀏覽器中移除。</p>
+
+      <div class="message-card">
+        <p>很遺憾與您告別。希望本工具曾為您的 Gemini 對話整理帶來過幫助。</p>
+        <p>若您將來希望再次體驗本擴充功能，隨時都能從 Chrome 線上應用程式商店輕鬆重新安裝。</p>
+      </div>
+
+      <div class="cta-container">
+        <button type="button" class="btn btn-secondary" onclick="window.close()">關閉此頁面</button>
+      </div>
+
       <div class="footer">
         Gemini Chat Folders
       </div>
@@ -154,39 +295,42 @@
 
   <script>
     function setLanguage(lang) {
-      const itContent = document.getElementById('content-it');
-      const enContent = document.getElementById('content-en');
+      const locales = ['it', 'en', 'es', 'pt_BR', 'ja', 'ko', 'zh_CN', 'zh_TW'];
+      const targetLang = locales.includes(lang) ? lang : 'en';
       const select = document.getElementById('lang-select');
 
-      if (select && select.value !== lang) {
-        select.value = lang;
+      if (select && select.value !== targetLang) {
+        select.value = targetLang;
       }
 
-      if (lang === 'it') {
-        itContent.style.display = 'block';
-        enContent.style.display = 'none';
-        document.documentElement.lang = 'it';
-      } else {
-        itContent.style.display = 'none';
-        enContent.style.display = 'block';
-        document.documentElement.lang = 'en';
-      }
+      locales.forEach(l => {
+        const el = document.getElementById('content-' + l);
+        if (el) {
+          el.style.display = (l === targetLang) ? 'block' : 'none';
+        }
+      });
+
+      document.documentElement.lang = targetLang.replace('_', '-');
     }
 
-    // Rileva la lingua dell'utente all'avvio
-    const userLang = (navigator.language || navigator.userLanguage || 'en').toLowerCase();
-    if (userLang.startsWith('it')) {
-      setLanguage('it');
-    } else {
-      setLanguage('en');
-    }
+    const urlParams = new URLSearchParams(window.location.search);
+    const paramLang = (urlParams.get('lang') || urlParams.get('hl') || '').trim().toLowerCase();
+    const rawUserLang = paramLang || (navigator.language || navigator.userLanguage || 'en').toLowerCase();
+    let detectedLang = 'en';
+    const normalized = rawUserLang.replace('-', '_');
+    if (normalized.startsWith('it')) detectedLang = 'it';
+    else if (normalized.startsWith('es')) detectedLang = 'es';
+    else if (normalized.startsWith('pt')) detectedLang = 'pt_BR';
+    else if (normalized.startsWith('ja')) detectedLang = 'ja';
+    else if (normalized.startsWith('ko')) detectedLang = 'ko';
+    else if (normalized.includes('tw') || normalized.includes('hk') || normalized.includes('hant')) detectedLang = 'zh_TW';
+    else if (normalized.startsWith('zh')) detectedLang = 'zh_CN';
 
-    // Tracciamento completamente anonimo della disinstallazione su PostHog EU (nessun dato personale, IP mascherato)
+    setLanguage(detectedLang);
+
     (function() {
       try {
-        const params = new URLSearchParams(window.location.search);
-        const version = params.get('v') || 'unknown';
-
+        const version = urlParams.get('v') || urlParams.get('version') || '5.17.8';
         fetch('https://eu.i.posthog.com/capture/', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
@@ -195,23 +339,14 @@
             event: 'extension_uninstalled',
             distinct_id: 'non_disponibile',
             properties: {
-              distinct_id: 'non_disponibile',
-              user_id: 'non_disponibile',
-              device_id: 'non_disponibile',
-              user_anonymous_id: 'non_disponibile',
-              device_anonymous_id: 'non_disponibile',
               version: version,
               browser_language: (typeof navigator !== 'undefined' ? navigator.language : ''),
               $ip: null,
               source: 'uninstall_page'
             }
           })
-        }).catch(function() {
-          // Ignora errori di rete
-        });
-      } catch (e) {
-        // Nessun blocco
-      }
+        }).catch(function() {});
+      } catch (e) {}
     })();
   </script>
 </body>

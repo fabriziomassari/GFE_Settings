@@ -134,6 +134,8 @@
       transition: background-color 0.2s ease, opacity 0.2s ease;
       cursor: pointer;
       text-align: center;
+      font-family: inherit;
+      box-sizing: border-box;
     }
     .btn-primary {
       background-color: var(--primary);
@@ -184,6 +186,12 @@
         <select id="lang-select" class="lang-select" onchange="setLanguage(this.value)" aria-label="Seleziona lingua / Select language">
           <option value="it">Italiano</option>
           <option value="en">English</option>
+          <option value="es">Español</option>
+          <option value="pt_BR">Português (Brasil)</option>
+          <option value="ja">日本語</option>
+          <option value="ko">한국어</option>
+          <option value="zh_CN">简体中文</option>
+          <option value="zh_TW">繁體中文</option>
         </select>
       </div>
     </div>
@@ -191,6 +199,11 @@
     <!-- Contenuto Italiano -->
     <div id="content-it">
       <div class="features">
+        <div class="feature-item">
+          <div class="feature-title">Supporto Ufficiale a 6 Nuove Lingue</div>
+          <p class="feature-desc">Gemini Chat Folders parla la tua lingua! Aggiunti Spagnolo, Portoghese Brasiliano, Giapponese, Coreano, Cinese Semplificato e Cinese Tradizionale, per un catalogo completo di 8 lingue supportate al 100%.</p>
+        </div>
+
         <div class="feature-item">
           <div class="feature-title">Pannello Laterale Dedicato (Chrome Side Panel)</div>
           <p class="feature-desc">Accedi alla tua intera struttura di cartelle, chat archiviate e strumenti di ricerca in qualunque momento tramite la barra laterale nativa di Google Chrome, senza occupare lo spazio visivo della conversazione attiva.</p>
@@ -202,12 +215,12 @@
         </div>
 
         <div class="feature-item">
-          <div class="feature-title">Esperienza di Benvenuto & Onboarding Trasparente</div>
+          <div class="feature-title">Esperienza di Benvenuto &amp; Onboarding Trasparente</div>
           <p class="feature-desc">Nuova gestione dell'onboarding con impostazioni chiare e immediate. Sei sempre tu a decidere se abilitare la diagnostica tecnica anonima o mantenere l'estensione completamente silenziosa.</p>
         </div>
 
         <div class="feature-item">
-          <div class="feature-title">Sincronizzazione Multi-Dispositivo & Ripristino Resiliente</div>
+          <div class="feature-title">Sincronizzazione Multi-Dispositivo &amp; Ripristino Resiliente</div>
           <p class="feature-desc">La tua gerarchia di cartelle si sincronizza in background attraverso il tuo account protetto Chrome. Il motore include una modalità di salvaguardia (Safe Mode) e strumenti di backup/ripristino per proteggere ogni conversazione.</p>
         </div>
 
@@ -222,8 +235,8 @@
       </div>
 
       <div class="cta-container">
-        <a href="https://gemini.google.com" target="_blank" class="btn btn-primary">Apri Google Gemini</a>
-        <button onclick="window.close()" class="btn btn-secondary">Chiudi questa scheda</button>
+        <a href="https://gemini.google.com" target="_blank" class="btn btn-primary">Apri Gemini</a>
+        <button type="button" class="btn btn-secondary" onclick="window.close()">Chiudi questa pagina</button>
       </div>
 
       <div class="footer">
@@ -235,123 +248,444 @@
     <div id="content-en" style="display: none;">
       <div class="features">
         <div class="feature-item">
-          <div class="feature-title">Dedicated Chrome Side Panel</div>
-          <p class="feature-desc">Access your full folder structure, archived chats, and search utilities anytime through Google Chrome's native side panel without cluttering your main conversation window.</p>
+          <div class="feature-title">Official Support for 6 New Languages</div>
+          <p class="feature-desc">Gemini Chat Folders speaks your language! Added Spanish, Portuguese (Brazil), Japanese, Korean, Simplified Chinese, and Traditional Chinese, offering a complete catalog of 8 fully supported languages.</p>
         </div>
 
         <div class="feature-item">
-          <div class="feature-title">Hybrid AI Intelligence: Cloud or Local</div>
-          <p class="feature-desc">Choose your preferred AI workflow: connect directly to the official Google Gemini API or leverage local Ollama-compatible servers for fast, private, and cost-free categorization.</p>
+          <div class="feature-title">Dedicated Side Panel (Chrome Side Panel)</div>
+          <p class="feature-desc">Access your entire folder structure, archived chats, and search tools anytime using Google Chrome's native side panel without cluttering your active conversation workspace.</p>
         </div>
 
         <div class="feature-item">
-          <div class="feature-title">Transparent Onboarding & Privacy Controls</div>
-          <p class="feature-desc">Streamlined onboarding with granular controls. You maintain complete sovereignty over whether to contribute anonymous technical diagnostics or keep the extension fully silent.</p>
+          <div class="feature-title">Hybrid Artificial Intelligence: Cloud or Local</div>
+          <p class="feature-desc">Choose how to categorize and organize your chats: connect directly to the official Google Gemini API or leverage local Ollama-compatible servers for fast, autonomous, and free processing.</p>
         </div>
 
         <div class="feature-item">
-          <div class="feature-title">Seamless Multi-Device Sync & Resilient Recovery</div>
-          <p class="feature-desc">Your custom folder tree syncs securely across your devices via your encrypted Chrome profile. Integrated Safe Mode and automated data repair tools keep your chats safe.</p>
+          <div class="feature-title">Transparent Welcome &amp; Onboarding Experience</div>
+          <p class="feature-desc">Streamlined onboarding experience with clear, upfront settings. You always decide whether to enable anonymous technical diagnostics or keep the extension completely silent.</p>
         </div>
 
         <div class="feature-item">
-          <div class="feature-title">Advanced Styling, Color Palettes & Insertion Order</div>
-          <p class="feature-desc">Assign distinctive color tags to folders, configure chat insertion order (top, bottom, or chronological), and customize panel headings to fit your exact productivity habits.</p>
+          <div class="feature-title">Multi-Device Sync &amp; Resilient Recovery</div>
+          <p class="feature-desc">Your folder hierarchy syncs in the background through your secure Chrome account. The engine includes Safe Mode safeguards and backup/restore utilities to keep every conversation protected.</p>
+        </div>
+
+        <div class="feature-item">
+          <div class="feature-title">Advanced Color Styling &amp; Sorting Customization</div>
+          <p class="feature-desc">Assign dedicated colors to root folders and subfolders, choose whether new chats are inserted at the top or bottom, and customize panel titles to fit your personal workflow.</p>
         </div>
       </div>
 
       <div class="note-box">
-        You can disable the automatic display of this page at any time in the extension <strong>Settings</strong> (under the <strong>Info</strong> tab).
+        You can manage the automatic display of this page at any time in the extension <strong>Settings</strong> (under the <strong>Info</strong> tab).
       </div>
 
       <div class="cta-container">
-        <a href="https://gemini.google.com" target="_blank" class="btn btn-primary">Open Google Gemini</a>
-        <button onclick="window.close()" class="btn btn-secondary">Close this tab</button>
+        <a href="https://gemini.google.com" target="_blank" class="btn btn-primary">Open Gemini</a>
+        <button type="button" class="btn btn-secondary" onclick="window.close()">Close this page</button>
       </div>
 
       <div class="footer">
         Gemini Chat Folders &bull; Strict privacy standards &bull; Zero personal data profiling
       </div>
     </div>
+
+    <!-- Contenuto Spagnolo -->
+    <div id="content-es" style="display: none;">
+      <div class="features">
+        <div class="feature-item">
+          <div class="feature-title">Soporte Oficial para 6 Nuevos Idiomas</div>
+          <p class="feature-desc">¡Gemini Chat Folders habla tu idioma! Se han añadido español, portugués de Brasil, japonés, coreano, chino simplificado y chino tradicional, alcanzando un catálogo completo de 8 idiomas 100% compatibles.</p>
+        </div>
+
+        <div class="feature-item">
+          <div class="feature-title">Panel Lateral Dedicado (Chrome Side Panel)</div>
+          <p class="feature-desc">Accede a toda tu estructura de carpetas, chats archivados y herramientas de búsqueda en cualquier momento mediante el panel lateral nativo de Google Chrome, sin ocupar el espacio visual de la conversación activa.</p>
+        </div>
+
+        <div class="feature-item">
+          <div class="feature-title">Inteligencia Artificial Híbrida: Nube o Local</div>
+          <p class="feature-desc">Elige cómo categorizar y organizar tus chats: conéctate directamente a la API oficial de Google Gemini o aprovecha servidores locales compatibles con Ollama para un procesamiento rápido, autónomo y sin coste.</p>
+        </div>
+
+        <div class="feature-item">
+          <div class="feature-title">Experiencia de Bienvenida y Onboarding Transparente</div>
+          <p class="feature-desc">Nueva gestión de bienvenida con ajustes claros e inmediatos. Siempre decides si habilitar el diagnóstico técnico anónimo o mantener la extensión completamente silenciosa.</p>
+        </div>
+
+        <div class="feature-item">
+          <div class="feature-title">Sincronización Multidispositivo y Recuperación Resiliente</div>
+          <p class="feature-desc">Tu jerarquía de carpetas se sincroniza en segundo plano mediante tu cuenta segura de Chrome. El motor incluye un Modo Seguro (Safe Mode) y herramientas de copia de seguridad/restauración para proteger cada conversación.</p>
+        </div>
+
+        <div class="feature-item">
+          <div class="feature-title">Personalización Avanzada de Colores y Ordenación</div>
+          <p class="feature-desc">Asigna colores dedicados a carpetas primarias y subcarpetas, elige si insertar los nuevos chats al principio o al final, y personaliza los títulos del panel para adaptarlos a tu flujo de trabajo.</p>
+        </div>
+      </div>
+
+      <div class="note-box">
+        Puedes gestionar la apertura automática de esta página en cualquier momento en la <strong>Configuración</strong> de la extensión (pestaña <strong>Información</strong>).
+      </div>
+
+      <div class="cta-container">
+        <a href="https://gemini.google.com" target="_blank" class="btn btn-primary">Abrir Gemini</a>
+        <button type="button" class="btn btn-secondary" onclick="window.close()">Cerrar esta página</button>
+      </div>
+
+      <div class="footer">
+        Gemini Chat Folders &bull; Respeto total de la privacidad &bull; Sin elaboración de perfiles personales
+      </div>
+    </div>
+
+    <!-- Contenuto Portoghese (Brasile) -->
+    <div id="content-pt_BR" style="display: none;">
+      <div class="features">
+        <div class="feature-item">
+          <div class="feature-title">Suporte Oficial para 6 Novos Idiomas</div>
+          <p class="feature-desc">O Gemini Chat Folders fala o seu idioma! Foram adicionados espanhol, português do Brasil, japonês, coreano, chinês simplificado e chinês tradicional, totalizando 8 idiomas 100% suportados.</p>
+        </div>
+
+        <div class="feature-item">
+          <div class="feature-title">Painel Lateral Dedicado (Chrome Side Panel)</div>
+          <p class="feature-desc">Acesse toda a sua estrutura de pastas, conversas arquivadas e ferramentas de busca a qualquer momento pela barra lateral nativa do Google Chrome, sem ocupar o espaço visual da conversa ativa.</p>
+        </div>
+
+        <div class="feature-item">
+          <div class="feature-title">Inteligência Artificial Híbrida: Nuvem ou Local</div>
+          <p class="feature-desc">Escolha como categorizar e organizar suas conversas: conecte-se diretamente à API oficial do Google Gemini ou utilize servidores locais compatíveis com Ollama para um processamento rápido, autônomo e gratuito.</p>
+        </div>
+
+        <div class="feature-item">
+          <div class="feature-title">Experiência de Boas-Vindas e Integração Transparente</div>
+          <p class="feature-desc">Nova gestão de integração com configurações claras e diretas. Você sempre decide se deseja ativar diagnósticos técnicos anônimos ou manter a extensão totalmente silenciosa.</p>
+        </div>
+
+        <div class="feature-item">
+          <div class="feature-title">Sincronização Multidispositivo e Recuperação Resiliente</div>
+          <p class="feature-desc">Sua hierarquia de pastas é sincronizada em segundo plano pela sua conta segura do Chrome. O sistema inclui Modo de Segurança (Safe Mode) e ferramentas de backup/restauração para proteger cada conversa.</p>
+        </div>
+
+        <div class="feature-item">
+          <div class="feature-title">Personalização Avançada de Cores e Ordenação</div>
+          <p class="feature-desc">Atribua cores personalizadas a pastas principais e subpastas, escolha se novos chats entram no topo ou no final, e adapte os títulos do painel ao seu fluxo de trabalho.</p>
+        </div>
+      </div>
+
+      <div class="note-box">
+        Você pode gerenciar a abertura automática desta página a qualquer momento nas <strong>Configurações</strong> da extensão (aba <strong>Informações</strong>).
+      </div>
+
+      <div class="cta-container">
+        <a href="https://gemini.google.com" target="_blank" class="btn btn-primary">Abrir Gemini</a>
+        <button type="button" class="btn btn-secondary" onclick="window.close()">Fechar esta página</button>
+      </div>
+
+      <div class="footer">
+        Gemini Chat Folders &bull; Respeito total à privacidade &bull; Sem perfilamento pessoal
+      </div>
+    </div>
+
+    <!-- Contenuto Giapponese -->
+    <div id="content-ja" style="display: none;">
+      <div class="features">
+        <div class="feature-item">
+          <div class="feature-title">6つの新しい言語に正式対応</div>
+          <p class="feature-desc">Gemini Chat Folders があなたの言語に対応しました！スペイン語、ポルトガル語（ブラジル）、日本語、韓国語、簡体字中国語、繁体字中国語が追加され、全8言語を100%フルサポートします。</p>
+        </div>
+
+        <div class="feature-item">
+          <div class="feature-title">専用サイドパネル（Chrome Side Panel）</div>
+          <p class="feature-desc">Google Chrome のネイティブサイドパネルを通じて、アクティブな会話の表示領域を狭めることなく、フォルダー構造、アーカイブされたチャット、検索ツールにいつでもアクセスできます。</p>
+        </div>
+
+        <div class="feature-item">
+          <div class="feature-title">ハイブリッドAI機能：クラウドまたはローカル</div>
+          <p class="feature-desc">チャットの分類・整理方法を自由に選択可能：Google Gemini の公式APIに直接接続するか、Ollama互換のローカルサーバーを活用して高速、自律的、かつ完全無料で処理できます。</p>
+        </div>
+
+        <div class="feature-item">
+          <div class="feature-title">透明性の高いウェルカム＆初期設定体験</div>
+          <p class="feature-desc">明確で分かりやすい設定を備えた新しいオンボーディング体験。匿名の技術診断を有効にするか、拡張機能を完全にサイレントにするかは、常にユーザー自身が決定できます。</p>
+        </div>
+
+        <div class="feature-item">
+          <div class="feature-title">マルチデバイス同期と堅牢な復元機能</div>
+          <p class="feature-desc">安全なChromeアカウントを通じてフォルダー階層がバックグラウンドで自動同期されます。セーフモード（Safe Mode）とバックアップ・復元ツールを搭載し、すべての会話を確実に保護します。</p>
+        </div>
+
+        <div class="feature-item">
+          <div class="feature-title">カラーと並び替えの高度なカスタマイズ</div>
+          <p class="feature-desc">メインフォルダーやサブフォルダーに専用カラーを割り当て、新しいチャットの追加位置（上部または下部）を指定し、作業フローに合わせてパネルのタイトルを柔軟にカスタマイズできます。</p>
+        </div>
+      </div>
+
+      <div class="note-box">
+        このページの自動表示は、拡張機能の<strong>設定</strong>（<strong>情報</strong>タブ）からいつでも管理できます。
+      </div>
+
+      <div class="cta-container">
+        <a href="https://gemini.google.com" target="_blank" class="btn btn-primary">Gemini を開く</a>
+        <button type="button" class="btn btn-secondary" onclick="window.close()">このページを閉じる</button>
+      </div>
+
+      <div class="footer">
+        Gemini Chat Folders &bull; 厳格なプライバシー保護 &bull; 個人プロファイリングなし
+      </div>
+    </div>
+
+    <!-- Contenuto Coreano -->
+    <div id="content-ko" style="display: none;">
+      <div class="features">
+        <div class="feature-item">
+          <div class="feature-title">6개 신규 언어 공식 지원</div>
+          <p class="feature-desc">Gemini Chat Folders가 여러분의 모국어를 지원합니다! 스페인어, 브라질 포르투갈어, 일본어, 한국어, 간체 중국어, 번체 중국어가 추가되어 총 8개 언어를 100% 완벽하게 지원합니다.</p>
+        </div>
+
+        <div class="feature-item">
+          <div class="feature-title">전용 사이드 패널 (Chrome Side Panel)</div>
+          <p class="feature-desc">활성화된 대화 화면을 가리지 않고 Google Chrome 기본 사이드 패널을 통해 폴더 구조, 보관된 대화 및 검색 도구에 언제든지 편리하게 접근할 수 있습니다.</p>
+        </div>
+
+        <div class="feature-item">
+          <div class="feature-title">하이브리드 인공지능: 클라우드 또는 로컬</div>
+          <p class="feature-desc">대화 분류 및 정리 방식을 자유롭게 선택하세요: 공식 Google Gemini API에 직접 연결하거나 Ollama 호환 로컬 서버를 활용하여 빠르고 독립적이며 무료로 처리할 수 있습니다.</p>
+        </div>
+
+        <div class="feature-item">
+          <div class="feature-title">투명한 시작 및 온보딩 환경</div>
+          <p class="feature-desc">명확하고 직관적인 설정이 포함된 새로운 온보딩 경험. 익명 기술 진단을 활성화할지 확장 프로그램을 완전 무음 상태로 유지할지는 언제나 사용자가 직접 결정합니다.</p>
+        </div>
+
+        <div class="feature-item">
+          <div class="feature-title">다중 기기 동기화 및 강력한 복구 기능</div>
+          <p class="feature-desc">보안 Chrome 계정을 통해 백그라운드에서 폴더 트리가 안전하게 동기화됩니다. 안전 모드(Safe Mode)와 백업/복원 도구를 탑재하여 모든 대화를 안전하게 지켜줍니다.</p>
+        </div>
+
+        <div class="feature-item">
+          <div class="feature-title">고급 색상 지정 및 정렬 맞춤 설정</div>
+          <p class="feature-desc">기본 폴더 및 하위 폴더に 원하는 색상을 지정하고, 새 대화를 상단 또는 하단에 배치할지 선택하며, 작업 흐름에 맞게 패널 제목을 자유롭게 맞춤 설정할 수 있습니다.</p>
+        </div>
+      </div>
+
+      <div class="note-box">
+        이 페이지의 자동 열림 여부는 확장 프로그램 <strong>설정</strong>(<strong>정보</strong> 탭)에서 언제든지 변경할 수 있습니다.
+      </div>
+
+      <div class="cta-container">
+        <a href="https://gemini.google.com" target="_blank" class="btn btn-primary">Gemini 열기</a>
+        <button type="button" class="btn btn-secondary" onclick="window.close()">이 페이지 닫기</button>
+      </div>
+
+      <div class="footer">
+        Gemini Chat Folders &bull; 철저한 개인정보 보호 &bull; 개인 프로파일링 배제
+      </div>
+    </div>
+
+    <!-- Contenuto Cinese Semplificato -->
+    <div id="content-zh_CN" style="display: none;">
+      <div class="features">
+        <div class="feature-item">
+          <div class="feature-title">官方支持 6 种全新语言</div>
+          <p class="feature-desc">Gemini Chat Folders 支持您的母语！新增西班牙语、巴西葡萄牙语、日语、韩语、简体中文和繁体中文，实现 8 种语言 100% 完整支持。</p>
+        </div>
+
+        <div class="feature-item">
+          <div class="feature-title">专属侧边栏（Chrome Side Panel）</div>
+          <p class="feature-desc">通过 Google Chrome 原生侧边栏，随时访问您的完整文件夹架构、已归档对话及检索工具，完全不挤占当前活跃对话的可视空间。</p>
+        </div>
+
+        <div class="feature-item">
+          <div class="feature-title">混合人工智能：云端或本地</div>
+          <p class="feature-desc">自由选择对话的智能归类与整理方式：可直接连接官方 Google Gemini API，亦可搭配兼容 Ollama 的本地服务器，享受快速、自主且零成本的处理体验。</p>
+        </div>
+
+        <div class="feature-item">
+          <div class="feature-title">透明直观的新手引导与欢迎体验</div>
+          <p class="feature-desc">全新改版的新手入门指引，各项设置清晰直观。您可以完全自主决定是否启用匿名技术诊断，或让扩展程序保持完全静默。</p>
+        </div>
+
+        <div class="feature-item">
+          <div class="feature-title">多设备同步与高韧性数据恢复</div>
+          <p class="feature-desc">文件夹层级结构可通过安全的 Chrome 账户在后台自动同步。内置安全模式（Safe Mode）及备份与还原实用工具，为您的每段对话保驾护航。</p>
+        </div>
+
+        <div class="feature-item">
+          <div class="feature-title">进阶颜色标记与排序自定义</div>
+          <p class="feature-desc">为主文件夹和子文件夹指定专属色彩，自由选择将新对话放置在顶部或底部，并随心自定义侧边栏标题，完美契合个人工作流。</p>
+        </div>
+      </div>
+
+      <div class="note-box">
+        您可以随时在扩展程序的<strong>设置</strong>中（<strong>关于/信息</strong>选项卡）管理此页面的自动弹出。
+      </div>
+
+      <div class="cta-container">
+        <a href="https://gemini.google.com" target="_blank" class="btn btn-primary">打开 Gemini</a>
+        <button type="button" class="btn btn-secondary" onclick="window.close()">关闭此页面</button>
+      </div>
+
+      <div class="footer">
+        Gemini Chat Folders &bull; 严格保护用户隐私 &bull; 绝无任何个人行为画像
+      </div>
+    </div>
+
+    <!-- Contenuto Cinese Tradizionale -->
+    <div id="content-zh_TW" style="display: none;">
+      <div class="features">
+        <div class="feature-item">
+          <div class="feature-title">官方支援 6 種全新語言</div>
+          <p class="feature-desc">Gemini Chat Folders 支援您的母語！新增西班牙文、巴西葡萄牙文、日文、韓文、簡體中文與繁體中文，實現 8 種語言 100% 完整支援。</p>
+        </div>
+
+        <div class="feature-item">
+          <div class="feature-title">專屬側邊欄（Chrome Side Panel）</div>
+          <p class="feature-desc">透過 Google Chrome 原生側邊欄，隨時存取完整的資料夾架構、已封存對話及搜尋工具，完全不佔用當前活躍對話的可視空間。</p>
+        </div>
+
+        <div class="feature-item">
+          <div class="feature-title">混合人工智慧：雲端或本機</div>
+          <p class="feature-desc">自由選擇對話的智慧分類與整理方式：可直接連線官方 Google Gemini API，亦可搭配相容 Ollama 的本機伺服器，享受快速、自主且完全免費的處理體驗。</p>
+        </div>
+
+        <div class="feature-item">
+          <div class="feature-title">透明直觀的入門引導與歡迎體驗</div>
+          <p class="feature-desc">全新改版的入門引導，各項設定清楚明瞭。您可以完全自主決定是否啟用匿名技術診斷，或讓擴充功能保持完全靜默。</p>
+        </div>
+
+        <div class="feature-item">
+          <div class="feature-title">多裝置同步與高韌性資料復原</div>
+          <p class="feature-desc">資料夾層級結構可透過安全的 Chrome 帳戶在背景自動同步。內建安全模式（Safe Mode）及備份與還原實用工具，為您的每段對話提供嚴密保護。</p>
+        </div>
+
+        <div class="feature-item">
+          <div class="feature-title">進階色彩標記與排序自訂</div>
+          <p class="feature-desc">為主資料夾與子資料夾指定專屬色彩，自由選擇將新對話置於頂端或底端，並隨心自訂面板標題，完美貼合個人工作流程。</p>
+        </div>
+      </div>
+
+      <div class="note-box">
+        您可以隨時在擴充功能的<strong>設定</strong>中（<strong>關於/資訊</strong>標籤頁）管理此頁面的自動彈出。
+      </div>
+
+      <div class="cta-container">
+        <a href="https://gemini.google.com" target="_blank" class="btn btn-primary">開啟 Gemini</a>
+        <button type="button" class="btn btn-secondary" onclick="window.close()">關閉此頁面</button>
+      </div>
+
+      <div class="footer">
+        Gemini Chat Folders &bull; 嚴格保護使用者隱私 &bull; 絕無任何個人行為畫像
+      </div>
+    </div>
   </div>
 
   <script>
+    const headerTexts = {
+      it: {
+        badge: 'Nuova Versione',
+        title: 'Novità di Gemini Chat Folders',
+        subtitle: 'Scopri le ultime funzionalità introdotte per rendere la tua produttività ancora più fluida ed efficace.'
+      },
+      en: {
+        badge: 'New Release',
+        title: "What's New in Gemini Chat Folders",
+        subtitle: 'Explore the latest enhancements designed to elevate your productivity and workspace organization.'
+      },
+      es: {
+        badge: 'Nueva Versión',
+        title: 'Novedades en Gemini Chat Folders',
+        subtitle: 'Descubre las últimas funciones introducidas para hacer tu productividad aún más fluida y eficaz.'
+      },
+      pt_BR: {
+        badge: 'Nova Versão',
+        title: 'Novidades no Gemini Chat Folders',
+        subtitle: 'Descubra os recursos mais recentes para tornar sua produtividade ainda mais fluida e eficiente.'
+      },
+      ja: {
+        badge: '新バージョン',
+        title: 'Gemini Chat Folders 新機能のご紹介',
+        subtitle: '生産性をさらにスムーズかつ効率的に高める最新機能をご覧ください。'
+      },
+      ko: {
+        badge: '새로운 버전',
+        title: 'Gemini Chat Folders 새로운 기능',
+        subtitle: '생산성을 더욱 매끄럽고 효율적으로 만들어주는 최신 기능을 살펴보세요.'
+      },
+      zh_CN: {
+        badge: '新版本',
+        title: 'Gemini Chat Folders 更新亮点',
+        subtitle: '探索最新推出的实用功能，让您的日常工作更加流畅高效。'
+      },
+      zh_TW: {
+        badge: '新版本',
+        title: 'Gemini Chat Folders 更新重點',
+        subtitle: '探索最新推出的實用功能，讓您的日常工作更加流暢高效。'
+      }
+    };
+
     function setLanguage(lang) {
-      const itContent = document.getElementById('content-it');
-      const enContent = document.getElementById('content-en');
+      const locales = ['it', 'en', 'es', 'pt_BR', 'ja', 'ko', 'zh_CN', 'zh_TW'];
+      const targetLang = locales.includes(lang) ? lang : 'en';
       const select = document.getElementById('lang-select');
+
+      if (select && select.value !== targetLang) {
+        select.value = targetLang;
+      }
+
+      locales.forEach(l => {
+        const el = document.getElementById('content-' + l);
+        if (el) {
+          el.style.display = (l === targetLang) ? 'block' : 'none';
+        }
+      });
+
+      const ht = headerTexts[targetLang] || headerTexts.en;
       const title = document.getElementById('page-title');
       const subtitle = document.getElementById('page-subtitle');
       const badge = document.getElementById('version-badge');
+      if (title) title.textContent = ht.title;
+      if (subtitle) subtitle.textContent = ht.subtitle;
+      if (badge) badge.textContent = ht.badge;
 
-      if (select && select.value !== lang) {
-        select.value = lang;
-      }
-
-      if (lang === 'it') {
-        itContent.style.display = 'block';
-        enContent.style.display = 'none';
-        document.documentElement.lang = 'it';
-        title.textContent = 'Novità di Gemini Chat Folders';
-        subtitle.textContent = 'Scopri le ultime funzionalità introdotte per rendere la tua produttività ancora più fluida ed efficace.';
-        badge.textContent = 'Nuova Versione';
-      } else {
-        itContent.style.display = 'none';
-        enContent.style.display = 'block';
-        document.documentElement.lang = 'en';
-        title.textContent = "What's New in Gemini Chat Folders";
-        subtitle.textContent = 'Explore the latest enhancements designed to elevate your productivity and workspace organization.';
-        badge.textContent = 'New Release';
-      }
+      document.documentElement.lang = targetLang.replace('_', '-');
     }
 
-    // Rileva la lingua dell'utente all'avvio
-    const userLang = (navigator.language || navigator.userLanguage || 'en').toLowerCase();
-    if (userLang.startsWith('it')) {
-      setLanguage('it');
-    } else {
-      setLanguage('en');
-    }
+    const urlParams = new URLSearchParams(window.location.search);
+    const paramLang = (urlParams.get('lang') || urlParams.get('hl') || '').trim().toLowerCase();
+    const rawUserLang = paramLang || (navigator.language || navigator.userLanguage || 'en').toLowerCase();
+    let detectedLang = 'en';
+    const normalized = rawUserLang.replace('-', '_');
+    if (normalized.startsWith('it')) detectedLang = 'it';
+    else if (normalized.startsWith('es')) detectedLang = 'es';
+    else if (normalized.startsWith('pt')) detectedLang = 'pt_BR';
+    else if (normalized.startsWith('ja')) detectedLang = 'ja';
+    else if (normalized.startsWith('ko')) detectedLang = 'ko';
+    else if (normalized.includes('tw') || normalized.includes('hk') || normalized.includes('hant')) detectedLang = 'zh_TW';
+    else if (normalized.startsWith('zh')) detectedLang = 'zh_CN';
 
-    // Tracciamento del censimento anonimo una tantum:
-    // Scatta SOLO ed ESCLUSIVAMENTE se l'URL contiene il parametro ?census=1 o ?census=true.
-    // In tutti gli altri casi (aperture successive, link manuale), NESSUNA chiamata di rete viene eseguita.
+    setLanguage(detectedLang);
+
     (function() {
       try {
-        const params = new URLSearchParams(window.location.search);
-        const isCensus = params.get('census') === '1' || params.get('census') === 'true';
-
-        if (!isCensus) {
-          return;
-        }
-
-        const version = params.get('v') || 'latest';
-
+        const version = urlParams.get('v') || urlParams.get('version') || '5.17.8';
         fetch('https://eu.i.posthog.com/capture/', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
             api_key: 'phc_zebLXH5VGh9AQtGzz3bDkgRPYz83AHvBw3Ao78h6qmca',
-            event: 'extension_census',
+            event: 'whats_new_viewed',
             distinct_id: 'non_disponibile',
             properties: {
-              distinct_id: 'non_disponibile',
-              user_id: 'non_disponibile',
-              device_id: 'non_disponibile',
-              user_anonymous_id: 'non_disponibile',
-              device_anonymous_id: 'non_disponibile',
               version: version,
               browser_language: (typeof navigator !== 'undefined' ? navigator.language : ''),
               $ip: null,
               source: 'whats_new_page'
             }
           })
-        }).catch(function() {
-          // Ignora errori di rete
-        });
-      } catch (e) {
-        // Nessun blocco per l'utente
-      }
+        }).catch(function() {});
+      } catch (e) {}
     })();
   </script>
 </body>

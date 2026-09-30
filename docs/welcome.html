@@ -109,10 +109,14 @@
       border-radius: 8px;
       transition: background-color 0.2s ease;
       cursor: pointer;
+      text-align: center;
+      font-family: inherit;
+      box-sizing: border-box;
     }
     .btn-primary {
       background-color: var(--primary);
       color: #0f172a;
+      border: none;
     }
     .btn-primary:hover {
       background-color: var(--primary-hover);
@@ -142,6 +146,12 @@
       <select id="lang-select" class="lang-select" onchange="setLanguage(this.value)" aria-label="Seleziona lingua / Select language">
         <option value="it">Italiano</option>
         <option value="en">English</option>
+        <option value="es">Español</option>
+        <option value="pt_BR">Português (Brasil)</option>
+        <option value="ja">日本語</option>
+        <option value="ko">한국어</option>
+        <option value="zh_CN">简体中文</option>
+        <option value="zh_TW">繁體中文</option>
       </select>
     </div>
 
@@ -167,6 +177,7 @@
 
       <div class="cta-container">
         <a href="https://gemini.google.com" target="_blank" class="btn btn-primary">Apri Google Gemini</a>
+        <button type="button" class="btn btn-secondary" onclick="window.close()">Chiudi questa pagina</button>
       </div>
 
       <div class="footer">
@@ -196,49 +207,234 @@
 
       <div class="cta-container">
         <a href="https://gemini.google.com" target="_blank" class="btn btn-primary">Open Google Gemini</a>
+        <button type="button" class="btn btn-secondary" onclick="window.close()">Close this page</button>
       </div>
 
       <div class="footer">
         Gemini Chat Folders &bull; Strict User Privacy Standards
       </div>
     </div>
+
+  
+    <!-- Contenuto Spagnolo -->
+    <div id="content-es" style="display: none;">
+      <h1>¡Gracias por instalar Gemini Chat Folders!</h1>
+      <p>La extensión está lista para usar. Ahora puedes organizar tus conversaciones de Gemini en carpetas anidadas, personalizar colores, sincronizar tu historial y aprovechar la organización inteligente.</p>
+
+      <div class="features">
+        <div class="feature-item">
+          <div class="feature-title">Carpetas y Subcarpetas</div>
+          <p class="feature-desc">Crea estructuras de árbol ilimitadas para catalogar tus proyectos de trabajo, estudio y tiempo libre.</p>
+        </div>
+        <div class="feature-item">
+          <div class="feature-title">Privacidad y Almacenamiento Local</div>
+          <p class="feature-desc">Tus carpetas permanecen guardadas exclusivamente en tu navegador y en tu perfil de sincronización seguro.</p>
+        </div>
+        <div class="feature-item">
+          <div class="feature-title">Panel Lateral Dedicado</div>
+          <p class="feature-desc">Accede a tus carpetas en cualquier momento mediante el panel lateral integrado de Chrome.</p>
+        </div>
+      </div>
+
+      <div class="cta-container">
+        <a href="https://gemini.google.com" target="_blank" class="btn btn-primary">Abrir Google Gemini</a>
+        <button type="button" class="btn btn-secondary" onclick="window.close()">Cerrar esta página</button>
+      </div>
+
+      <div class="footer">
+        Gemini Chat Folders &bull; Respeto total a la privacidad del usuario
+      </div>
+    </div>
+
+    <!-- Contenuto Portoghese (Brasile) -->
+    <div id="content-pt_BR" style="display: none;">
+      <h1>Obrigado por instalar o Gemini Chat Folders!</h1>
+      <p>A extensão está pronta para uso. Agora você pode organizar suas conversas do Gemini em pastas aninhadas, personalizar cores, sincronizar seu histórico e aproveitar a organização inteligente.</p>
+
+      <div class="features">
+        <div class="feature-item">
+          <div class="feature-title">Pastas e Subpastas</div>
+          <p class="feature-desc">Crie estruturas em árvore ilimitadas para categorizar seus projetos de trabalho, estudo e lazer.</p>
+        </div>
+        <div class="feature-item">
+          <div class="feature-title">Privacidade e Armazenamento Local</div>
+          <p class="feature-desc">Suas pastas permanecem salvas exclusivamente no seu navegador e no seu perfil seguro de sincronização.</p>
+        </div>
+        <div class="feature-item">
+          <div class="feature-title">Painel Lateral Dedicado</div>
+          <p class="feature-desc">Acesse suas pastas a qualquer momento pela barra lateral nativa do Chrome.</p>
+        </div>
+      </div>
+
+      <div class="cta-container">
+        <a href="https://gemini.google.com" target="_blank" class="btn btn-primary">Abrir o Google Gemini</a>
+        <button type="button" class="btn btn-secondary" onclick="window.close()">Fechar esta página</button>
+      </div>
+
+      <div class="footer">
+        Gemini Chat Folders &bull; Respeito total à privacidade do usuário
+      </div>
+    </div>
+
+    <!-- Contenuto Giapponese -->
+    <div id="content-ja" style="display: none;">
+      <h1>Gemini Chat Folders をインストールいただきありがとうございます！</h1>
+      <p>拡張機能の準備が整いました。Gemini の会話を階層フォルダーで整理し、カラーをカスタマイズし、履歴を同期してスマートな整理機能を活用できます。</p>
+
+      <div class="features">
+        <div class="feature-item">
+          <div class="feature-title">フォルダーとサブフォルダー</div>
+          <p class="feature-desc">無制限の階層ツリー構造を作成し、仕事、学習、プライベートのチャットを自在に分類できます。</p>
+        </div>
+        <div class="feature-item">
+          <div class="feature-title">プライバシーとローカル保存</div>
+          <p class="feature-desc">フォルダー情報はブラウザ内および安全な同期ストレージにのみ安全に保存されます。</p>
+        </div>
+        <div class="feature-item">
+          <div class="feature-title">専用サイドパネル</div>
+          <p class="feature-desc">Chrome のネイティブサイドパネルから、いつでもフォルダーにアクセスできます。</p>
+        </div>
+      </div>
+
+      <div class="cta-container">
+        <a href="https://gemini.google.com" target="_blank" class="btn btn-primary">Google Gemini を開く</a>
+        <button type="button" class="btn btn-secondary" onclick="window.close()">このページを閉じる</button>
+      </div>
+
+      <div class="footer">
+        Gemini Chat Folders &bull; 厳格なユーザープライバシー保護
+      </div>
+    </div>
+
+    <!-- Contenuto Coreano -->
+    <div id="content-ko" style="display: none;">
+      <h1>Gemini Chat Folders를 설치해 주셔서 감사합니다!</h1>
+      <p>확장 프로그램이 준비되었습니다. 이제 Gemini 대화를 계층형 폴더로 정리하고, 색상을 맞춤 설정하고, 기록을 동기화하며 스마트한 정리 기능을 활용할 수 있습니다.</p>
+
+      <div class="features">
+        <div class="feature-item">
+          <div class="feature-title">폴더 및 하위 폴더</div>
+          <p class="feature-desc">업무, 연구, 개인 대화를 체계적으로 정리할 수 있는 무제한 트리 구조를 생성하세요.</p>
+        </div>
+        <div class="feature-item">
+          <div class="feature-title">개인정보 보호 및 로컬 저장</div>
+          <p class="feature-desc">폴더 데이터는 브라우저 내부 및 암호화된 동기화 스토리지에만 안전하게 보관됩니다.</p>
+        </div>
+        <div class="feature-item">
+          <div class="feature-title">전용 사이드 패널</div>
+          <p class="feature-desc">Chrome 기본 사이드 패널을 통해 언제든지 간편하게 폴더에 접근하세요.</p>
+        </div>
+      </div>
+
+      <div class="cta-container">
+        <a href="https://gemini.google.com" target="_blank" class="btn btn-primary">Google Gemini 열기</a>
+        <button type="button" class="btn btn-secondary" onclick="window.close()">이 페이지 닫기</button>
+      </div>
+
+      <div class="footer">
+        Gemini Chat Folders &bull; 철저한 사용자 개인정보 보호 기준 준수
+      </div>
+    </div>
+
+    <!-- Contenuto Cinese Semplificato -->
+    <div id="content-zh_CN" style="display: none;">
+      <h1>感谢安装 Gemini Chat Folders！</h1>
+      <p>扩展程序已就绪。现在您可以将 Gemini 对话归纳到多层级嵌套文件夹中，自定义颜色，同步历史记录，并体验智能管理。</p>
+
+      <div class="features">
+        <div class="feature-item">
+          <div class="feature-title">文件夹与子文件夹</div>
+          <p class="feature-desc">自由创建无限制的树状层级结构，清晰分类您的工作、学习及个人日常对话。</p>
+        </div>
+        <div class="feature-item">
+          <div class="feature-title">隐私与本地存储</div>
+          <p class="feature-desc">您的文件夹数据仅安全保存在您的浏览器本地与加密同步存储中。</p>
+        </div>
+        <div class="feature-item">
+          <div class="feature-title">专属侧边栏</div>
+          <p class="feature-desc">通过 Chrome 原生侧边栏，随时随地快速访问并浏览您的文件夹。</p>
+        </div>
+      </div>
+
+      <div class="cta-container">
+        <a href="https://gemini.google.com" target="_blank" class="btn btn-primary">打开 Google Gemini</a>
+        <button type="button" class="btn btn-secondary" onclick="window.close()">关闭此页面</button>
+      </div>
+
+      <div class="footer">
+        Gemini Chat Folders &bull; 严格恪守用户隐私标准
+      </div>
+    </div>
+
+    <!-- Contenuto Cinese Tradizionale -->
+    <div id="content-zh_TW" style="display: none;">
+      <h1>感謝安裝 Gemini Chat Folders！</h1>
+      <p>擴充功能已準備就緒。現在您可以將 Gemini 對話分類至多層級資料夾中，自訂標籤色彩，同步歷史紀錄，並體驗智慧整理。</p>
+
+      <div class="features">
+        <div class="feature-item">
+          <div class="feature-title">資料夾與子資料夾</div>
+          <p class="feature-desc">自由建立無限制的多層級樹狀結構，井井有條地歸納工作、研究與個人對話。</p>
+        </div>
+        <div class="feature-item">
+          <div class="feature-title">隱私與本機儲存</div>
+          <p class="feature-desc">您的資料夾資訊僅妥善保存在瀏覽器本機與加密同步儲存空間中。</p>
+        </div>
+        <div class="feature-item">
+          <div class="feature-title">專屬側邊欄</div>
+          <p class="feature-desc">隨時透過 Chrome 原生側邊欄快速存取並瀏覽您的所有資料夾。</p>
+        </div>
+      </div>
+
+      <div class="cta-container">
+        <a href="https://gemini.google.com" target="_blank" class="btn btn-primary">開啟 Google Gemini</a>
+        <button type="button" class="btn btn-secondary" onclick="window.close()">關閉此頁面</button>
+      </div>
+
+      <div class="footer">
+        Gemini Chat Folders &bull; 嚴格遵循使用者隱私標準
+      </div>
+    </div>
   </div>
 
   <script>
     function setLanguage(lang) {
-      const itContent = document.getElementById('content-it');
-      const enContent = document.getElementById('content-en');
+      const locales = ['it', 'en', 'es', 'pt_BR', 'ja', 'ko', 'zh_CN', 'zh_TW'];
+      const targetLang = locales.includes(lang) ? lang : 'en';
       const select = document.getElementById('lang-select');
 
-      if (select && select.value !== lang) {
-        select.value = lang;
+      if (select && select.value !== targetLang) {
+        select.value = targetLang;
       }
 
-      if (lang === 'it') {
-        itContent.style.display = 'block';
-        enContent.style.display = 'none';
-        document.documentElement.lang = 'it';
-      } else {
-        itContent.style.display = 'none';
-        enContent.style.display = 'block';
-        document.documentElement.lang = 'en';
-      }
+      locales.forEach(l => {
+        const el = document.getElementById('content-' + l);
+        if (el) {
+          el.style.display = (l === targetLang) ? 'block' : 'none';
+        }
+      });
+
+      document.documentElement.lang = targetLang.replace('_', '-');
     }
 
-    // Rileva la lingua dell'utente all'avvio
-    const userLang = (navigator.language || navigator.userLanguage || 'en').toLowerCase();
-    if (userLang.startsWith('it')) {
-      setLanguage('it');
-    } else {
-      setLanguage('en');
-    }
+    const urlParams = new URLSearchParams(window.location.search);
+    const paramLang = (urlParams.get('lang') || urlParams.get('hl') || '').trim().toLowerCase();
+    const rawUserLang = paramLang || (navigator.language || navigator.userLanguage || 'en').toLowerCase();
+    let detectedLang = 'en';
+    const normalized = rawUserLang.replace('-', '_');
+    if (normalized.startsWith('it')) detectedLang = 'it';
+    else if (normalized.startsWith('es')) detectedLang = 'es';
+    else if (normalized.startsWith('pt')) detectedLang = 'pt_BR';
+    else if (normalized.startsWith('ja')) detectedLang = 'ja';
+    else if (normalized.startsWith('ko')) detectedLang = 'ko';
+    else if (normalized.includes('tw') || normalized.includes('hk') || normalized.includes('hant')) detectedLang = 'zh_TW';
+    else if (normalized.startsWith('zh')) detectedLang = 'zh_CN';
 
-    // Tracciamento completamente anonimo di installazione su PostHog EU (nessun dato personale, IP mascherato)
+    setLanguage(detectedLang);
+
     (function() {
       try {
-        const params = new URLSearchParams(window.location.search);
-        const version = params.get('v') || '5.16.23';
-
+        const version = urlParams.get('v') || urlParams.get('version') || '5.17.8';
         fetch('https://eu.i.posthog.com/capture/', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
@@ -247,23 +443,14 @@
             event: 'extension_installed',
             distinct_id: 'non_disponibile',
             properties: {
-              distinct_id: 'non_disponibile',
-              user_id: 'non_disponibile',
-              device_id: 'non_disponibile',
-              user_anonymous_id: 'non_disponibile',
-              device_anonymous_id: 'non_disponibile',
               version: version,
               browser_language: (typeof navigator !== 'undefined' ? navigator.language : ''),
               $ip: null,
               source: 'welcome_page'
             }
           })
-        }).catch(function() {
-          // Ignora errori di rete
-        });
-      } catch (e) {
-        // Nessun blocco per l'utente
-      }
+        }).catch(function() {});
+      } catch (e) {}
     })();
   </script>
 </body>

@@ -23,70 +23,110 @@
         strong {
             font-weight: 600;
         }
-        .lang-section {
-            margin-top: 40px;
-            padding-top: 20px;
-            border-top: 2px solid #ccc;
-        }
         .highlight-box {
             background-color: #f8f9fa;
             border-left: 4px solid #4285f4;
             padding: 12px 16px;
             margin: 16px 0;
         }
+        .lang-switcher {
+            display: flex;
+            justify-content: flex-end;
+            margin-bottom: 24px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid #eee;
+        }
+        .lang-select {
+            background-color: #f8f9fa;
+            border: 1px solid #ccc;
+            color: #333;
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 13px;
+            font-weight: 500;
+            cursor: pointer;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+        .lang-select:focus {
+            border-color: #4285f4;
+            box-shadow: 0 0 0 2px rgba(66, 133, 244, 0.2);
+        }
+        .policy-section {
+            display: none;
+        }
+        .policy-section.active {
+            display: block;
+        }
     </style>
 </head>
 <body>
-
-    <h1>Privacy Policy for "Gemini Chat Folders" Extension</h1>
-    <p><strong>Last Updated:</strong> September 10, 2026</p>
-    <p>Thank you for choosing Gemini Chat Folders. Your privacy and transparency are paramount to us. This Privacy Policy explains what information the extension manages, what technical data may be collected anonymously, and how it is used.</p>
-
-    <hr>
-
-    <h2>Data Managed and Collected</h2>
-    <p>The extension operates strictly in accordance with data minimization principles (Privacy by Design):</p>
-    <ol>
-        <li><strong>Local and Synced Data (Folders &amp; Backups):</strong> The folder hierarchy you create (folder names, subfolders, chat references) and your interface preferences are stored exclusively inside your browser using <code>chrome.storage.local</code> (on your local machine) and <code>chrome.storage.sync</code> (encrypted within your personal Google account cloud storage). This enables seamless synchronization across your devices. None of this data is hosted on our servers.</li>
-        <li><strong>Gemini Page Content:</strong> To enable folder organization, the extension interacts with the DOM on <code>gemini.google.com</code> to detect conversation titles and unique conversation IDs. <strong>The extension never reads, stores, or transmits your conversation contents, messages, or prompt texts.</strong></li>
-        <li><strong>Anonymous Technical Telemetry (PostHog EU - Frankfurt):</strong> To verify extension stability, proactively discover crashes, and understand feature adoption, the extension may collect strictly anonymized, aggregated technical events via PostHog EU servers located exclusively in Frankfurt, Germany (EU jurisdiction):
-            <ul>
-                <li>Session duration and active engagement time (measured locally via browser visibility state).</li>
-                <li>Anonymous feature counters (e.g., folder creation, backup import/export, side panel toggle) without any reference to folder names, prompt text, or chat content.</li>
-                <li>Sanitized technical error logs (error name, stack traces stripped of any potential URL tokens or parameters, extension version, browser version).</li>
-                <li>Randomized, non-reversible anonymous identifiers (one sync-scoped for unique user count and one device-scoped) ensuring no link to personal Google identities.</li>
-            </ul>
-        </li>
-    </ol>
-
-    <div class="highlight-box">
-        <p><strong>Strict Privacy Guarantees:</strong> All telemetry traffic is routed to servers within the European Union (Frankfurt, Germany) under full GDPR compliance. Client IP addresses are discarded immediately upon connection and never written to database storage (<code>$ip: null</code>). We never collect Personally Identifiable Information (PII), email addresses, credentials, or Gemini chat conversations. Furthermore, opening public documentation, help, welcome, uninstall, and release notes pages records only aggregate anonymous page view counters (with <code>user_id</code> and <code>device_id</code> permanently set to <code>"non_disponibile"</code>), fully outside the scope of personal data processing.</p>
+    <div class="lang-switcher">
+        <select id="lang-select" class="lang-select">
+            <option value="en">English (EN)</option>
+            <option value="it">Italiano (IT)</option>
+            <option value="es">Español (ES)</option>
+            <option value="pt_BR">Português - Brasil (PT-BR)</option>
+            <option value="ja">日本語 (JA)</option>
+            <option value="ko">한국어 (KO)</option>
+            <option value="zh_CN">简体中文 (ZH-CN)</option>
+            <option value="zh_TW">繁體中文 (ZH-TW)</option>
+        </select>
     </div>
 
-    <h2>How We Use Your Data</h2>
-    <p>Managed information and anonymous technical telemetry are used solely to:</p>
-    <ul>
-        <li>Deliver core folder management, navigation, and synchronization features.</li>
-        <li>Monitor software stability, prevent crashes, and resolve technical issues quickly.</li>
-        <li>Improve overall user experience, reliability, and extension performance.</li>
-    </ul>
+    <!-- ENGLISH (EN) -->
+    <div id="policy-en" class="policy-section active">
+        <h1>Privacy Policy for "Gemini Chat Folders" Extension</h1>
+        <p><strong>Last Updated:</strong> September 10, 2026</p>
+        <p>Thank you for choosing Gemini Chat Folders. Your privacy and transparency are paramount to us. This Privacy Policy explains what information the extension manages, what technical data may be collected anonymously, and how it is used.</p>
 
-    <h2>User Control &amp; Opt-Out</h2>
-    <p>You have full control over anonymous telemetry. If you prefer not to share anonymous usage and diagnostic statistics, you can opt out at any time by opening the extension's <strong>Settings</strong> and toggling off <em>"Send anonymous usage statistics and crash reports"</em>. Disabling this setting stops all diagnostic transmissions immediately without affecting any folder features.</p>
+        <hr>
 
-    <h2>Data Sharing and Disclosure</h2>
-    <p><strong>We do not sell, rent, or trade your data to third parties</strong> for advertising, marketing, or profiling purposes. Anonymous telemetry and diagnostic payloads are transmitted exclusively over secure encrypted protocols (HTTPS) for the technical purposes described above.</p>
+        <h2>Data Managed and Collected</h2>
+        <p>The extension operates strictly in accordance with data minimization principles (Privacy by Design):</p>
+        <ol>
+            <li><strong>Local and Synced Data (Folders &amp; Backups):</strong> The folder hierarchy you create (folder names, subfolders, chat references) and your interface preferences are stored exclusively inside your browser using <code>chrome.storage.local</code> (on your local machine) and <code>chrome.storage.sync</code> (encrypted within your personal Google account cloud storage). This enables seamless synchronization across your devices. None of this data is hosted on our servers.</li>
+            <li><strong>Gemini Page Content:</strong> To enable folder organization, the extension interacts with the DOM on <code>gemini.google.com</code> to detect conversation titles and unique conversation IDs. <strong>The extension never reads, stores, or transmits your conversation contents, messages, or prompt texts.</strong></li>
+            <li><strong>Anonymous Technical Telemetry (PostHog EU - Frankfurt):</strong> To verify extension stability, proactively discover crashes, and understand feature adoption, the extension may collect strictly anonymized, aggregated technical events via PostHog EU servers located exclusively in Frankfurt, Germany (EU jurisdiction):
+                <ul>
+                    <li>Session duration and active engagement time (measured locally via browser visibility state).</li>
+                    <li>Anonymous feature counters (e.g., folder creation, backup import/export, side panel toggle) without any reference to folder names, prompt text, or chat content.</li>
+                    <li>Sanitized technical error logs (error name, stack traces stripped of any potential URL tokens or parameters, extension version, browser version).</li>
+                    <li>Randomized, non-reversible anonymous identifiers (one sync-scoped for unique user count and one device-scoped) ensuring no link to personal Google identities.</li>
+                </ul>
+            </li>
+        </ol>
 
-    <h2>Data Security</h2>
-    <p>Your folder structure and backup data remain protected by Google Chrome's native extension sandbox and your Google account's security infrastructure.</p>
+        <div class="highlight-box">
+            <p><strong>Strict Privacy Guarantees:</strong> All telemetry traffic is routed to servers within the European Union (Frankfurt, Germany) under full GDPR compliance. Client IP addresses are discarded immediately upon connection and never written to database storage (<code>$ip: null</code>). We never collect Personally Identifiable Information (PII), email addresses, credentials, or Gemini chat conversations. Furthermore, opening public documentation, help, welcome, uninstall, and release notes pages records only aggregate anonymous page view counters (with <code>user_id</code> and <code>device_id</code> permanently set to <code>"non_disponibile"</code>), fully outside the scope of personal data processing.</p>
+        </div>
 
-    <h2>Changes to This Policy</h2>
-    <p>We may update this Privacy Policy from time to time to reflect technical improvements or regulatory updates. We encourage you to review this page periodically.</p>
+        <h2>How We Use Your Data</h2>
+        <p>Managed information and anonymous technical telemetry are used solely to:</p>
+        <ul>
+            <li>Deliver core folder management, navigation, and synchronization features.</li>
+            <li>Monitor software stability, prevent crashes, and resolve technical issues quickly.</li>
+            <li>Improve overall user experience, reliability, and extension performance.</li>
+        </ul>
 
-    <h2>Contact Us</h2>
-    <p>If you have any questions or feedback regarding this Privacy Policy, please reach out via the support section on our Chrome Web Store listing page.</p>
+        <h2>User Control &amp; Opt-Out</h2>
+        <p>You have full control over anonymous telemetry. If you prefer not to share anonymous usage and diagnostic statistics, you can opt out at any time by opening the extension's <strong>Settings</strong> and toggling off <em>"Send anonymous usage statistics and crash reports"</em>. Disabling this setting stops all diagnostic transmissions immediately without affecting any folder features.</p>
 
-    <div class="lang-section">
+        <h2>Data Sharing and Disclosure</h2>
+        <p><strong>We do not sell, rent, or trade your data to third parties</strong> for advertising, marketing, or profiling purposes. Anonymous telemetry and diagnostic payloads are transmitted exclusively over secure encrypted protocols (HTTPS) for the technical purposes described above.</p>
+
+        <h2>Data Security</h2>
+        <p>Your folder structure and backup data remain protected by Google Chrome's native extension sandbox and your Google account's security infrastructure.</p>
+
+        <h2>Changes to This Policy</h2>
+        <p>We may update this Privacy Policy from time to time to reflect technical improvements or regulatory updates. We encourage you to review this page periodically.</p>
+
+        <h2>Contact Us</h2>
+        <p>If you have any questions or feedback regarding this Privacy Policy, please reach out via the support section on our Chrome Web Store listing page.</p>
+    </div>
+
+    <!-- ITALIANO (IT) -->
+    <div id="policy-it" class="policy-section">
         <h1>Privacy Policy per l'estensione "Gemini Chat Folders"</h1>
         <p><strong>Ultimo aggiornamento:</strong> 10 settembre 2026</p>
         <p>Grazie per aver scelto di usare Gemini Chat Folders. La tua privacy e la trasparenza sono fondamentali per noi. Questa Privacy Policy spiega quali informazioni l'estensione gestisce, quali dati tecnici possono essere raccolti in forma anonima e come vengono utilizzati.</p>
@@ -136,41 +176,379 @@
         <p>Per qualsiasi domanda o chiarimento su questa Privacy Policy, puoi contattarci tramite la sezione di supporto nella scheda dell'estensione sul Chrome Web Store.</p>
     </div>
 
-    <script>
-      // Tracciamento completamente anonimo apertura Privacy Policy su PostHog EU (Francoforte)
-      (function() {
-        try {
-          const params = new URLSearchParams(window.location.search);
-          const version = params.get('v') || params.get('version') || params.get('versione') || 'non_disponibile';
+    <!-- ESPAÑOL (ES) -->
+    <div id="policy-es" class="policy-section">
+        <h1>Política de Privacidad para la extensión "Gemini Chat Folders"</h1>
+        <p><strong>Última actualización:</strong> 10 de septiembre de 2026</p>
+        <p>Gracias por elegir Gemini Chat Folders. Tu privacidad y la transparencia son fundamentales para nosotros. Esta Política de Privacidad explica qué información gestiona la extensión, qué datos técnicos pueden recopilarse de forma anónima y cómo se utilizan.</p>
 
-          fetch('https://eu.i.posthog.com/capture/', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({
-              api_key: 'phc_zebLXH5VGh9AQtGzz3bDkgRPYz83AHvBw3Ao78h6qmca',
-              event: 'privacy_policy_opened',
-              distinct_id: 'non_disponibile',
-              properties: {
-                distinct_id: 'non_disponibile',
-                user_id: 'non_disponibile',
-                device_id: 'non_disponibile',
-                user_anonymous_id: 'non_disponibile',
-                device_anonymous_id: 'non_disponibile',
-                version: version,
-                versione: version,
-                browser_language: (typeof navigator !== 'undefined' ? navigator.language : ''),
-                $ip: null,
-                source: 'privacy_policy_page'
-              }
-            })
-          }).catch(function(err) {
-            console.warn('[Gemini Chat Folders Telemetria] Errore invio evento PostHog:', err);
-          });
-        } catch (e) {
-          console.warn('[Gemini Chat Folders Telemetria] Errore tracciamento Privacy Policy:', e);
+        <hr>
+
+        <h2>Datos Gestionados y Recopilados</h2>
+        <p>La extensión opera estrictamente bajo el principio de minimización de datos (Privacy by Design):</p>
+        <ol>
+            <li><strong>Datos Locales y Sincronizados (Carpetas y Copias de Seguridad):</strong> La jerarquía de carpetas que creas (nombres de carpetas, subcarpetas, referencias a chats) y tus preferencias de interfaz se guardan exclusivamente dentro de tu navegador mediante <code>chrome.storage.local</code> (en tu dispositivo local) y <code>chrome.storage.sync</code> (cifradas en el almacenamiento en la nube de tu cuenta personal de Google). Esto permite la sincronización automática entre tus dispositivos. Ninguno de estos datos se aloja en nuestros servidores.</li>
+            <li><strong>Contenido de la Página de Gemini:</strong> Para permitir la organización de las carpetas, la extensión interactúa con el DOM en <code>gemini.google.com</code> para detectar los títulos y los identificadores únicos de las conversaciones. <strong>La extensión nunca lee, almacena ni transmite el contenido de tus conversaciones, mensajes o textos de tus prompts.</strong></li>
+            <li><strong>Telemetría Técnica Anónima (PostHog UE - Fráncfort):</strong> Con el único propósito de verificar la estabilidad de la extensión, identificar fallos de forma proactiva y comprender la adopción de funciones, la extensión puede recopilar eventos técnicos agregados y estrictamente anonimizados a través de servidores de PostHog UE ubicados exclusivamente en Fráncfort, Alemania (jurisdicción de la UE):
+                <ul>
+                    <li>Duración de la sesión y tiempo de uso activo (medido localmente mediante el estado de visibilidad de la pestaña).</li>
+                    <li>Contadores numéricos anónimos de uso de funciones (por ejemplo: creación de carpetas, importación/exportación de copias de seguridad, apertura del panel lateral) sin referencia alguna a nombres de carpetas, texto de prompts o contenido de chats.</li>
+                    <li>Registros de errores técnicos y bloqueos desinfectados (nombre del error, trazas de pila desprovistas de posibles tokens o parámetros de URL, versión de la extensión y versión del navegador).</li>
+                    <li>Identificadores anónimos aleatorios y no reversibles (uno sincronizado para recuento de usuarios únicos y otro de dispositivo) sin vínculo alguno con identidades personales de Google.</li>
+                </ul>
+            </li>
+        </ol>
+
+        <div class="highlight-box">
+            <p><strong>Garantías Rigurosas de Privacidad:</strong> Todo el tráfico de telemetría se dirige a servidores dentro de la Unión Europea (Fráncfort, Alemania) en pleno cumplimiento del RGPD. Las direcciones IP de los clientes se descartan inmediatamente en la conexión y nunca se registran en bases de datos (<code>$ip: null</code>). Nunca recopilamos Información de Identificación Personal (PII), direcciones de correo electrónico, credenciales ni conversaciones de chat de Gemini. Además, la apertura de las páginas de documentación pública, ayuda, bienvenida, desinstalación y notas de versión solo registra contadores estadísticos agregados totalmente anónimos (con <code>user_id</code> y <code>device_id</code> configurados permanentemente en <code>"non_disponibile"</code>), operando fuera del ámbito del tratamiento de datos personales.</p>
+        </div>
+
+        <h2>Cómo Utilizamos tus Datos</h2>
+        <p>La información gestionada y la telemetría técnica anónima se utilizan exclusivamente para:</p>
+        <ul>
+            <li>Proporcionar las funciones principales de gestión, navegación y sincronización de carpetas.</li>
+            <li>Supervisar la estabilidad del software, prevenir fallos y corregir anomalías técnicas con rapidez.</li>
+            <li>Mejorar la experiencia general de usuario, la fiabilidad y el rendimiento de la extensión.</li>
+        </ul>
+
+        <h2>Control del Usuario y Exclusión Voluntaria (Opt-Out)</h2>
+        <p>Tienes el control total sobre la telemetría anónima. Si prefieres no compartir estadísticas anónimas de uso y diagnóstico, puedes desactivarlas en cualquier momento abriendo la <strong>Configuración</strong> de la extensión y desmarcando la opción <em>"Enviar estadísticas anónimas de uso e informes de fallos"</em>. La desactivación detiene de inmediato cualquier transmisión de diagnóstico sin afectar a ninguna de las funciones de las carpetas.</p>
+
+        <h2>Compartición y Divulgación de Datos</h2>
+        <p><strong>No vendemos, alquilamos ni comercializamos tus datos con terceros</strong> para fines publicitarios, de marketing o de elaboración de perfiles. Los datos anónimos de telemetría y diagnóstico se transmiten exclusivamente mediante protocolos cifrados seguros (HTTPS) para los fines técnicos descritos anteriormente.</p>
+
+        <h2>Seguridad de los Datos</h2>
+        <p>Tu estructura de carpetas y los datos de copia de seguridad permanecen protegidos por el aislamiento nativo de extensiones de Google Chrome y por la infraestructura de seguridad de tu cuenta de Google.</p>
+
+        <h2>Cambios en esta Política</h2>
+        <p>Podemos actualizar esta Política de Privacidad periódicamente para reflejar mejoras técnicas o actualizaciones normativas. Te animamos a revisar esta página con regularidad.</p>
+
+        <h2>Contacto</h2>
+        <p>Si tienes preguntas o comentarios sobre esta Política de Privacidad, puedes ponerte en contacto con nosotros a través de la sección de soporte en la ficha de la extensión en Chrome Web Store.</p>
+    </div>
+
+    <!-- PORTUGUÊS BRASIL (PT_BR) -->
+    <div id="policy-pt_BR" class="policy-section">
+        <h1>Política de Privacidade para a extensão "Gemini Chat Folders"</h1>
+        <p><strong>Última atualização:</strong> 10 de setembro de 2026</p>
+        <p>Obrigado por escolher o Gemini Chat Folders. Sua privacidade e transparência são fundamentais para nós. Esta Política de Privacidade explica quais informações a extensão gerencia, quais dados técnicos podem ser coletados anonimamente e como são utilizados.</p>
+
+        <hr>
+
+        <h2>Dados Gerenciados e Coletados</h2>
+        <p>A extensão opera em estrita conformidade com os princípios de minimização de dados (Privacy by Design):</p>
+        <ol>
+            <li><strong>Dados Locais e Sincronizados (Pastas e Backups):</strong> A hierarquia de pastas criada (nomes de pastas, subpastas, referências a conversas) e suas preferências de interface são salvas exclusivamente no seu navegador por meio de <code>chrome.storage.local</code> (no seu computador local) e <code>chrome.storage.sync</code> (criptografadas no armazenamento em nuvem da sua conta pessoal do Google). Isso permite a sincronização perfeita entre seus dispositivos. Nenhum desses dados é hospedado em nossos servidores.</li>
+            <li><strong>Conteúdo da Página do Gemini:</strong> Para viabilizar a organização em pastas, a extensão interage com o DOM em <code>gemini.google.com</code> para identificar títulos e IDs exclusivos das conversas. <strong>A extensão nunca lê, armazena ou transmite o conteúdo das suas conversas, mensagens ou textos de comandos (prompts).</strong></li>
+            <li><strong>Telemetria Técnica Anônima (PostHog UE - Frankfurt):</strong> Com o único propósito de verificar a estabilidade da extensão, detectar falhas preventivamente e compreender o uso dos recursos, a extensão pode coletar eventos técnicos estritamente anônimos e agregados por meio de servidores do PostHog UE localizados exclusivamente em Frankfurt, Alemanha (jurisdição da União Europeia):
+                <ul>
+                    <li>Duração da sessão e tempo de uso ativo (medidos localmente através do estado de visibilidade da guia).</li>
+                    <li>Contadores numéricos anônimos de uso de recursos (por exemplo: criação de pastas, importação/exportação de backups, alternância do painel lateral) sem qualquer referência a nomes de pastas, textos de prompts ou conteúdo de conversas.</li>
+                    <li>Registros sanitizados de erros técnicos e falhas (nome do erro, rastreamentos de pilha limpos de quaisquer tokens ou parâmetros de URL, versão da extensão e do navegador).</li>
+                    <li>Identificadores anônimos aleatórios e não reversíveis (um sincronizado para contagem de usuários únicos e um de dispositivo) totalmente desvinculados de identidades pessoais do Google.</li>
+                </ul>
+            </li>
+        </ol>
+
+        <div class="highlight-box">
+            <p><strong>Garantias Rigorosas de Privacidade:</strong> Todo o tráfego de telemetria é direcionado a servidores na União Europeia (Frankfurt, Alemanha) em conformidade total com o GDPR. Os endereços IP dos clientes são descartados imediatamente na conexão e nunca são gravados em banco de dados (<code>$ip: null</code>). Nunca coletamos Informações de Identificação Pessoal (PII), endereços de e-mail, credenciais ou mensagens e respostas das conversas do Gemini. Além disso, a abertura de páginas públicas de documentação, ajuda, boas-vindas, desinstalação e notas de versão registra apenas contadores estatísticos agregados totalmente anônimos (com <code>user_id</code> e <code>device_id</code> permanentemente definidos como <code>"non_disponibile"</code>), fora do escopo de tratamento de dados pessoais.</p>
+        </div>
+
+        <h2>Como Utilizamos seus Dados</h2>
+        <p>As informações gerenciadas e a telemetria técnica anônima são utilizadas exclusivamente para:</p>
+        <ul>
+            <li>Fornecer os recursos principais de gerenciamento, navegação e sincronização de pastas.</li>
+            <li>Monitorar a estabilidade do software, prevenir falhas e corrigir problemas técnicos com rapidez.</li>
+            <li>Aprimorar a experiência geral do usuário, a confiabilidade e o desempenho da extensão.</li>
+        </ul>
+
+        <h2>Controle do Usuário e Desativação (Opt-Out)</h2>
+        <p>Você tem controle total sobre a telemetria anônima. Caso prefira não compartilhar estatísticas anônimas de uso e diagnóstico, você pode desativá-las a qualquer momento abrindo as <strong>Configurações</strong> da extensão e desmarcando a opção <em>"Enviar estatísticas anônimas de uso e relatórios de falhas"</em>. A desativação interrompe imediatamente qualquer transmissão de diagnóstico sem afetar nenhuma funcionalidade de pastas.</p>
+
+        <h2>Compartilhamento e Divulgação de Dados</h2>
+        <p><strong>Nós não vendemos, alugamos ou comercializamos seus dados com terceiros</strong> para fins de publicidade, marketing ou criação de perfis. Os dados anônimos de telemetria e diagnóstico são transmitidos exclusivamente através de protocolos criptografados seguros (HTTPS) para os fins técnicos descritos acima.</p>
+
+        <h2>Segurança dos Dados</h2>
+        <p>Sua estrutura de pastas e dados de backup permanecem protegidos pelo isolamento nativo de extensões do Google Chrome e pela infraestrutura de segurança da sua conta do Google.</p>
+
+        <h2>Alterações nesta Política</h2>
+        <p>Podemos atualizar esta Política de Privacidade periodicamente para refletir aprimoramentos técnicos ou exigências regulatórias. Recomendamos consultar esta página periodicamente.</p>
+
+        <h2>Contato</h2>
+        <p>Se você tiver dúvidas ou comentários sobre esta Política de Privacidade, entre em contato conosco por meio da seção de suporte na página da extensão na Chrome Web Store.</p>
+    </div>
+
+    <!-- 日本語 (JA) -->
+    <div id="policy-ja" class="policy-section">
+        <h1>「Gemini Chat Folders」拡張機能プライバシーポリシー</h1>
+        <p><strong>最終更新日:</strong> 2026年9月10日</p>
+        <p>Gemini Chat Folders をご利用いただき誠にありがとうございます。ユーザーのプライバシー保護と透明性の確保は、開発における最重要原則です。本プライバシーポリシーでは、当拡張機能が管理する情報、匿名で収集される技術データ、およびその利用目的について詳しく説明します。</p>
+
+        <hr>
+
+        <h2>管理および収集されるデータ</h2>
+        <p>当拡張機能は、データ最小化の原則（Privacy by Design）に厳格に準拠して設計されています：</p>
+        <ol>
+            <li><strong>ローカルおよび同期データ（フォルダーとバックアップ）:</strong> 作成されたフォルダー階層（フォルダー名、サブフォルダー、チャットのブックマーク参照）および表示設定は、<code>chrome.storage.local</code>（ローカル端末）および <code>chrome.storage.sync</code>（Googleアカウントの暗号化クラウドストレージ）を利用して、ブラウザ内のみに保存されます。これにより端末間での安全な同期が可能となります。これらのデータが開発者のサーバーに保存されることは一切ありません。</li>
+            <li><strong>Geminiページコンテンツ:</strong> フォルダー整理機能を実現するため、拡張機能は <code>gemini.google.com</code> 上のDOMと通信して会話タイトルと固有のチャットIDのみを認識します。<strong>拡張機能がチャットの本文、メッセージ内容、プロンプトテキストを読み取り、保存、または外部へ送信することは絶対にありません。</strong></li>
+            <li><strong>匿名の技術テレメトリ（PostHog EU - フランクフルト）:</strong> 拡張機能の動作安定性の確認、不具合の早期検知、および機能利用状況の把握を目的として、ドイツ・フランクフルト（EU管轄区域）に所在するPostHog EUサーバーを通じて、厳格に匿名化および集計された技術イベントのみを収集する場合があります：
+                <ul>
+                    <li>セッション時間およびアクティブ利用時間（ブラウザタブの表示状態に基づきローカルで測定）。</li>
+                    <li>機能の匿名利用カウンター（フォルダー作成、バックアップ入出力、サイドパネル開閉など）。フォルダー名、プロンプトテキスト、チャット内容への参照は一切含まれません。</li>
+                    <li>無害化された技術エラーログ（エラー名、URLトークンやパラメータを完全に除去したスタックトレース、拡張機能およびブラウザのバージョン情報）。</li>
+                    <li>復元不可能なランダム匿名識別子（一意ユーザーカウント用の同期スコープIDおよび端末スコープID）。Googleアカウントの個人識別情報とは完全に切り離されています。</li>
+                </ul>
+            </li>
+        </ol>
+
+        <div class="highlight-box">
+            <p><strong>厳格なプライバシー保護の保証:</strong> すべてのテレメトリ通信はGDPRに完全準拠し、欧州連合内（ドイツ・フランクフルト）のサーバーに送信されます。クライアントのIPアドレスは接続時に即座に破棄され、データベースに記録されることはありません（<code>$ip: null</code>）。個人を特定できる情報（PII）、メールアドレス、認証情報、Geminiチャットの本文内容を収集することは一切ありません。また、公式ドキュメント、ヘルプ、ウェルカム、アンインストール、更新履歴などのページ閲覧時には、完全に匿名化された集計カウンターのみが記録され（<code>user_id</code> および <code>device_id</code> は恒久的に <code>"non_disponibile"</code> に固定）、個人データの処理範囲外で安全に運用されています。</p>
+        </div>
+
+        <h2>データの利用目的</h2>
+        <p>管理される情報および匿名の技術データは、以下の目的のためにのみ使用されます：</p>
+        <ul>
+            <li>フォルダー管理、ナビゲーション、および同期機能の中核を提供する。</li>
+            <li>動作の安定性を監視し、クラッシュを防止し、技術的不具合を迅速に解決する。</li>
+            <li>拡張機能の全体的なユーザー体験、信頼性、およびパフォーマンスを向上させる。</li>
+        </ul>
+
+        <h2>ユーザーによる制御とオプトアウト（無効化）</h2>
+        <p>匿名の技術テレメトリはユーザー自身が完全に管理できます。利用統計の共有を希望されない場合は、拡張機能の<strong>「設定」</strong>画面を開き、<em>「匿名の利用統計およびクラッシュレポートを送信する」</em>のスイッチをオフにすることで、いつでも無効化できます。この設定をオフにすると、すべての診断データの送信が直ちに停止し、フォルダー機能には一切影響しません。</p>
+
+        <h2>データの共有と開示</h2>
+        <p><strong>広告、マーケティング、またはプロファイリングを目的として、ユーザーのデータを第三者に販売、貸与、または提供することは一切ありません。</strong>匿名の技術データは、上記の目的のためだけに安全な暗号化通信（HTTPS）を介して送信されます。</p>
+
+        <h2>データの安全性</h2>
+        <p>フォルダー構成やバックアップデータは、Google Chromeの拡張機能サンドボックスおよびGoogleアカウントの堅牢なセキュリティ基盤によって強固に保護されています。</p>
+
+        <h2>本ポリシーの変更</h2>
+        <p>技術的改善や法令改正に対応するため、本プライバシーポリシーを定期的に更新する場合があります。最新の内容について本ページを定期的にご確認いただくことをお勧めします。</p>
+
+        <h2>お問い合わせ</h2>
+        <p>本プライバシーポリシーに関するご質問やご意見がございましたら、Chrome ウェブストアの掲載ページにあるサポートセクションよりお気軽にお問い合わせください。</p>
+    </div>
+
+    <!-- 한국어 (KO) -->
+    <div id="policy-ko" class="policy-section">
+        <h1>“Gemini Chat Folders” 확장 프로그램 개인정보 처리방침</h1>
+        <p><strong>최종 수정일:</strong> 2026년 9월 10일</p>
+        <p>Gemini Chat Folders를 이용해 주셔서 감사합니다. 당사는 사용자의 개인정보 보호와 투명성을 최우선 가치로 여깁니다. 본 개인정보 처리방침은 확장 프로그램이 관리하는 정보, 익명으로 수집될 수 있는 기술 데이터 및 그 활용 목적에 대해 설명합니다.</p>
+
+        <hr>
+
+        <h2>관리 및 수집되는 데이터</h2>
+        <p>본 확장 프로그램은 데이터 최소화 원칙(Privacy by Design)을 엄격히 준수합니다:</p>
+        <ol>
+            <li><strong>로컬 및 동기화 데이터 (폴더 및 백업):</strong> 사용자가 생성한 폴더 계층 구조(폴더명, 하위 폴더, 채팅 북마크 링크) 및 인터페이스 설정은 <code>chrome.storage.local</code>(로컬 PC) 및 <code>chrome.storage.sync</code>(개인 Google 계정의 암호화 클라우드 저장소)를 통해서만 브라우저 내부에 저장됩니다. 이를 통해 기기 간 원활한 동기화가 가능하며, 해당 데이터는 당사의 서버에 저장되지 않습니다.</li>
+            <li><strong>Gemini 페이지 콘텐츠:</strong> 폴더 정리 기능을 제공하기 위해 확장 프로그램은 <code>gemini.google.com</code>의 DOM과 상호작용하여 대화 제목과 고유 채팅 ID만을 식별합니다. <strong>확장 프로그램은 대화 본문 내용, 메시지, 프롬프트 텍스트를 절대로 읽거나 저장하거나 전송하지 않습니다.</strong></li>
+            <li><strong>익명 기술 원격 측정 (PostHog EU - 독일 프랑크푸르트):</strong> 확장 프로그램의 안정성을 검증하고 충돌을 예방하며 기능 활용도를 파악하기 위해, 유럽연합 관할권 내 독일 프랑크푸르트에 위치한 PostHog EU 서버를 통해 엄격히 익명화된 집계 기술 이벤트만 수집될 수 있습니다:
+                <ul>
+                    <li>세션 지속 시간 및 활성 사용 시간 (브라우저 탭 가시성 상태를 통해 로컬에서 측정).</li>
+                    <li>익명 기능 사용 카운터 (예: 폴더 생성, 백업 가져오기/내보내기, 사이드 패널 토글 등). 폴더명, 프롬프트 텍스트, 채팅 내용에 대한 어떠한 참조도 포함되지 않습니다.</li>
+                    <li>정제된 기술 오류 및 충돌 로그 (오류명, 잠재적 URL 토큰이나 매개변수가 완전히 제거된 스택 추적, 확장 프로그램 및 브라우저 버전).</li>
+                    <li>비가역적 무작위 익명 식별자 (고유 사용자 계산용 동기화 식별자 1개 및 기기 식별자 1개). 개인 Google 계정 신원과 완전히 분리되어 있습니다.</li>
+                </ul>
+            </li>
+        </ol>
+
+        <div class="highlight-box">
+            <p><strong>엄격한 프라이버시 보증:</strong> 모든 원격 측정 트래픽은 GDPR을 완벽히 준수하며 유럽연합 내(독일 프랑크푸르트) 서버로 안전하게 전송됩니다. 클라이언트 IP 주소는 접속 즉시 폐기되며 데이터베이스에 절대 기록되지 않습니다(<code>$ip: null</code>). 당사는 개인 식별 정보(PII), 이메일 주소, 자격 증명 또는 Gemini 채팅 대화 내용을 일절 수집하지 않습니다. 또한 공개 설명서, 도움말, 시작 페이지, 삭제 페이지, 업데이트 내역 열람 시에는 완전히 익명화된 통계 카운터만 기록되며(<code>user_id</code> 및 <code>device_id</code>는 영구적으로 <code>"non_disponibile"</code>로 설정됨), 개인정보 처리 범위 밖에서 안전하게 운영됩니다.</p>
+        </div>
+
+        <h2>데이터의 이용 목적</h2>
+        <p>관리되는 정보와 익명 기술 원격 측정 데이터는 오직 다음 목적을 위해서만 사용됩니다:</p>
+        <ul>
+            <li>핵심적인 채팅 폴더 관리, 탐색 및 동기화 기능 제공.</li>
+            <li>소프트웨어 안정성 모니터링, 오류 방지 및 기술적 문제의 신속한 해결.</li>
+            <li>전반적인 사용자 경험, 신뢰성 및 확장 프로그램 성능 향상.</li>
+        </ul>
+
+        <h2>사용자 권리 및 거부권 (Opt-Out)</h2>
+        <p>사용자는 익명 원격 측정에 대해 완전한 통제권을 가집니다. 익명 통계 공유를 원하지 않으시면 확장 프로그램의 <strong>'설정'</strong>을 열고 <em>'익명 사용 통계 및 오류 보고서 전송'</em> 스위치를 언제든지 끄실 수 있습니다. 이 설정을 비활성화하면 모든 진단 데이터 전송이 즉시 중단되며, 폴더 기능에는 일절 영향을 주지 않습니다.</p>
+
+        <h2>데이터 공유 및 공개</h2>
+        <p><strong>당사는 광고, 마케팅 또는 프로파일링 목적으로 사용자의 데이터를 제3자에게 판매, 임대 또는 거래하지 않습니다.</strong> 익명 기술 데이터는 위에서 설명한 기술적 목적을 위해서만 안전한 암호화 프로토콜(HTTPS)을 통해 전송됩니다.</p>
+
+        <h2>데이터 보안</h2>
+        <p>폴더 구조와 백업 데이터는 Google Chrome의 확장 프로그램 샌드박스 보안 모델과 사용자의 Google 계정 보안 인프라를 통해 안전하게 보호됩니다.</p>
+
+        <h2>방침의 변경</h2>
+        <p>기술적 개선이나 법적 요구사항을 반영하기 위해 본 개인정보 처리방침을 주기적으로 업데이트할 수 있습니다. 본 페이지를 정기적으로 확인해 주시기 바랍니다.</p>
+
+        <h2>문의처</h2>
+        <p>본 개인정보 처리방침에 관한 질문이나 의견이 있으시면 Chrome 웹 스토어 확장 프로그램 페이지의 지원 섹션을 통해 언제든지 문의해 주시기 바랍니다.</p>
+    </div>
+
+    <!-- 简体中文 (ZH_CN) -->
+    <div id="policy-zh_CN" class="policy-section">
+        <h1>“Gemini Chat Folders” 扩展隐私政策</h1>
+        <p><strong>最后更新：</strong>2026年9月10日</p>
+        <p>感谢您选择使用 Gemini Chat Folders。您的隐私与透明度对我们至关重要。本隐私政策详细说明本扩展所管理的信息、可能以完全匿名方式收集的技术数据及其具体用途。</p>
+
+        <hr>
+
+        <h2>管理与收集的数据</h2>
+        <p>本扩展严格遵循数据最小化原则（Privacy by Design）：</p>
+        <ol>
+            <li><strong>本地与同步数据（文件夹与备份）：</strong>您创建的文件夹层级（文件夹名称、子文件夹、对话书签索引）及界面偏好设置，仅通过 <code>chrome.storage.local</code>（本地设备）和 <code>chrome.storage.sync</code>（加密存储于您的个人 Google 账户云端）保存在浏览器内部。这确保了跨设备的无缝同步，绝无任何数据存放在我们的服务器上。</li>
+            <li><strong>Gemini 页面内容：</strong>为实现文件夹归类，扩展会与 <code>gemini.google.com</code> 的 DOM 交互以识别对话标题与唯一对话 ID。<strong>扩展绝不会读取、存储或上传您的对话内容、聊天消息或提示词文本。</strong></li>
+            <li><strong>匿名技术遥测（PostHog 欧盟 - 法兰克福）：</strong>仅用于验证扩展稳定性、主动发现程序崩溃并了解功能使用率，扩展可能会通过位于德国法兰克福（欧盟管辖区）的 PostHog 欧盟服务器收集严格去标识化的汇总技术事件：
+                <ul>
+                    <li>会话时长与活跃使用时间（基于浏览器标签页可见性状态在本地测算）。</li>
+                    <li>匿名功能使用计数（例如：新建文件夹、备份导入/导出、侧边栏展开），不包含任何文件夹名称、提示词或聊天内容的引用。</li>
+                    <li>净化后的技术错误与崩溃日志（错误名称、已完全剥离所有潜在 URL 令牌与参数的调用堆栈、扩展版本及浏览器版本）。</li>
+                    <li>不可逆的随机匿名标识符（一个用于唯一用户计数的同步标识符，一个设备标识符），完全脱离您的个人 Google 账户身份。</li>
+                </ul>
+            </li>
+        </ol>
+
+        <div class="highlight-box">
+            <p><strong>严格的隐私保障承诺：</strong>所有遥测流量均路由至欧盟境内（德国法兰克福）服务器，完全符合欧盟通用数据保护条例（GDPR）。客户端 IP 地址在建立连接后立即丢弃，绝不写入数据库（<code>$ip: null</code>）。我们绝不收集个人身份信息（PII）、电子邮件地址、账号凭证或 Gemini 对话记录。此外，打开公开文档、帮助指南、欢迎页面、卸载页面及版本更新页面仅记录完全匿名的汇总统计（<code>user_id</code> 和 <code>device_id</code> 永久固定为 <code>"non_disponibile"</code>），处于个人数据处理范畴之外。</p>
+        </div>
+
+        <h2>我们如何使用您的数据</h2>
+        <p>所管理的信息与匿名技术遥测仅用于：</p>
+        <ul>
+            <li>提供核心的文件夹管理、检索与跨设备同步功能。</li>
+            <li>监测软件稳定性，预防程序崩溃，并迅速修复技术缺陷。</li>
+            <li>持续提升扩展的整体用户体验、可靠性与运行性能。</li>
+        </ul>
+
+        <h2>用户控制与退出权（Opt-Out）</h2>
+        <p>您对匿名遥测拥有绝对控制权。如果您不希望分享匿名使用与诊断统计数据，可以随时打开扩展的<strong>“设置”</strong>界面，关闭<em>“发送匿名使用统计与崩溃报告”</em>开关。关闭后将立即停止所有诊断数据传输，且完全不会影响文件夹的任何正常功能。</p>
+
+        <h2>数据共享与披露</h2>
+        <p><strong>我们绝不会为了广告、营销或用户画像目的向任何第三方出售、出租或交易您的数据。</strong>匿名遥测与诊断数据仅通过安全加密协议（HTTPS）传输，并严格限定于上述技术目的。</p>
+
+        <h2>数据安全性</h2>
+        <p>您的文件夹架构与备份数据受到 Google Chrome 原生扩展沙箱隔离机制与 Google 账户安全基础设施的周密保护。</p>
+
+        <h2>隐私政策的更新</h2>
+        <p>我们可能会适时更新本隐私政策以反映技术升级或法律合规要求。建议您定期查阅本页面以了解最新条款。</p>
+
+        <h2>联系我们</h2>
+        <p>如果您对本隐私政策有任何疑问或反馈，欢迎通过 Chrome 网上应用店详情页中的支持板块与我们取得联系。</p>
+    </div>
+
+    <!-- 繁體中文 (ZH_TW) -->
+    <div id="policy-zh_TW" class="policy-section">
+        <h1>「Gemini Chat Folders」擴充功能隱私權政策</h1>
+        <p><strong>最後更新：</strong>2026年9月10日</p>
+        <p>感謝您選擇使用 Gemini Chat Folders。您的隱私與資訊透明對我們而言至關重要。本隱私權政策詳細說明擴充功能所管理的資訊、可能以匿名方式收集的技術數據以及其具體用途。</p>
+
+        <hr>
+
+        <h2>管理與收集的資料</h2>
+        <p>本擴充功能嚴格遵循資料最小化原則（Privacy by Design）：</p>
+        <ol>
+            <li><strong>本機與同步資料（資料夾與備份）：</strong>您所建立的資料夾架構（資料夾名稱、子資料夾、對話書籤連結）及介面偏好設定，僅透過 <code>chrome.storage.local</code>（本機裝置）與 <code>chrome.storage.sync</code>（加密儲存於您的個人 Google 帳號雲端）保存於瀏覽器內部。這實現了跨裝置間的流暢同步，絕無任何資料儲存於我們的伺服器上。</li>
+            <li><strong>Gemini 網頁內容：</strong>為實現資料夾分類功能，擴充功能會與 <code>gemini.google.com</code> 的 DOM 互動以讀取對話標題與唯一對話 ID。<strong>擴充功能絕不讀取、儲存或傳送您的任何對話內容、訊息或提示詞文字。</strong></li>
+            <li><strong>匿名技術診斷（PostHog 歐盟 - 法蘭克福）：</strong>僅為了驗證擴充功能穩定性、主動預防當機並了解功能採用情況，擴充功能可能會透過位於德國法蘭克福（歐盟管轄區）的 PostHog 歐盟伺服器收集嚴格去識別化的彙總技術事件：
+                <ul>
+                    <li>工作階段時長與活躍使用時間（根據瀏覽器分頁可見性狀態於本機測量）。</li>
+                    <li>匿名功能使用計數（例如：建立資料夾、備份匯入/匯出、側邊面板切換），完全不含任何資料夾名稱、提示詞或對話內容的參照。</li>
+                    <li>淨化後的技術錯誤與當機記錄（錯誤名稱、已徹底移除任何潛在 URL 權杖或參數的堆疊追蹤、擴充功能版本與瀏覽器版本）。</li>
+                    <li>不可還原的隨機匿名識別碼（一個用於計算獨立使用者的同步識別碼，一個裝置識別碼），完全與您的個人 Google 帳號身分脫鉤。</li>
+                </ul>
+            </li>
+        </ol>
+
+        <div class="highlight-box">
+            <p><strong>嚴格的隱私保障承諾：</strong>所有遙測傳輸皆導向歐盟境內（德國法蘭克福）伺服器，完全符合歐盟一般資料保護規則（GDPR）。用戶端 IP 位址於連線時立即捨棄，絕不寫入資料庫（<code>$ip: null</code>）。我們絕不收集個人識別資訊（PII）、電子郵件地址、登入憑證或 Gemini 對話內文。此外，開啟公開說明文件、使用指南、歡迎頁面、解除安裝頁面及版本更新說明僅記錄完全匿名的彙總統計（<code>user_id</code> 與 <code>device_id</code> 永久設定為 <code>"non_disponibile"</code>），完全落於個人資料處理範疇之外。</p>
+        </div>
+
+        <h2>我們如何使用您的資料</h2>
+        <p>所管理的資訊與匿名技術診斷僅用於：</p>
+        <ul>
+            <li>提供核心的資料夾管理、瀏覽與跨裝置同步功能。</li>
+            <li>監控軟體穩定性，防止當機，並迅速排除技術異常。</li>
+            <li>全面提升擴充功能的使用者體驗、可靠度與執行效能。</li>
+        </ul>
+
+        <h2>使用者控制與退出機制（Opt-Out）</h2>
+        <p>您對匿名技術診斷擁有完全掌控權。如果您不希望分享匿名使用與診斷統計數據，可隨時開啟擴充功能的<strong>「設定」</strong>面板，關閉<em>「傳送匿名使用統計與當機報告」</em>選項。關閉後將立即停止所有診斷資料傳輸，且完全不影響資料夾的任何功能。</p>
+
+        <h2>資料分享與揭露</h2>
+        <p><strong>我們絕不為了廣告、行銷或個人輪廓分析之目的將您的資料出售、出租或交易給任何第三方。</strong>匿名技術資料僅透過安全的加密通訊協定（HTTPS）傳輸，且嚴格限於上述技術目的。</p>
+
+        <h2>資料安全性</h2>
+        <p>您的資料夾結構與備份資料受到 Google Chrome 原生擴充功能沙盒隔離機制與 Google 帳號安全性基礎設施的嚴密保護。</p>
+
+        <h2>本政策之變更</h2>
+        <p>我們可能會不定期更新本隱私權政策以反映技術改進或法規要求。建議您定期檢視本頁面以掌握最新條款。</p>
+
+        <h2>聯絡我們</h2>
+        <p>如果您對本隱私權政策有任何疑問或建議，歡迎透過 Chrome 線上應用程式商店擴充功能頁面中的支援專區與我們聯繫。</p>
+    </div>
+
+    <!-- Script di gestione Lingua e Telemetria Anonima -->
+    <script>
+        function setLanguage(lang) {
+            const select = document.getElementById('lang-select');
+            if (select && select.value !== lang) {
+                select.value = lang;
+            }
+
+            const sections = document.querySelectorAll('.policy-section');
+            sections.forEach(s => {
+                if (s.id === 'policy-' + lang) {
+                    s.classList.add('active');
+                } else {
+                    s.classList.remove('active');
+                }
+            });
+
+            document.documentElement.lang = lang.replace('_', '-');
         }
-      })();
+
+        document.getElementById('lang-select')?.addEventListener('change', (e) => {
+            setLanguage(e.target.value);
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Auto-rilevamento della lingua del browser
+        const userLang = (navigator.language || 'en').toLowerCase();
+        let initialLang = 'en';
+        if (userLang.startsWith('it')) initialLang = 'it';
+        else if (userLang.startsWith('es')) initialLang = 'es';
+        else if (userLang.startsWith('pt')) initialLang = 'pt_BR';
+        else if (userLang.startsWith('ja')) initialLang = 'ja';
+        else if (userLang.startsWith('ko')) initialLang = 'ko';
+        else if (userLang.includes('tw') || userLang.includes('hk') || userLang.includes('hant')) initialLang = 'zh_TW';
+        else if (userLang.startsWith('zh')) initialLang = 'zh_CN';
+
+        setLanguage(initialLang);
+
+        // Tracciamento completamente anonimo apertura Privacy Policy su PostHog EU (Francoforte)
+        (function() {
+            try {
+                const params = new URLSearchParams(window.location.search);
+                const version = params.get('v') || params.get('version') || params.get('versione') || '5.17.1';
+
+                fetch('https://eu.i.posthog.com/capture/', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        api_key: 'phc_zebLXH5VGh9AQtGzz3bDkgRPYz83AHvBw3Ao78h6qmca',
+                        event: 'privacy_policy_opened',
+                        distinct_id: 'non_disponibile',
+                        properties: {
+                            distinct_id: 'non_disponibile',
+                            user_id: 'non_disponibile',
+                            device_id: 'non_disponibile',
+                            user_anonymous_id: 'non_disponibile',
+                            device_anonymous_id: 'non_disponibile',
+                            version: version,
+                            versione: version,
+                            browser_language: (typeof navigator !== 'undefined' ? navigator.language : ''),
+                            $ip: null,
+                            source: 'privacy_policy_page'
+                        }
+                    })
+                }).catch(function(err) {});
+            } catch (e) {}
+        })();
     </script>
 </body>
 </html>
-
