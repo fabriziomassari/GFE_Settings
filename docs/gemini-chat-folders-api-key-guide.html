@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gemini Chat Folders - API Key Guide</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&family=Roboto+Mono&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: 'Google Sans', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #3c4043;
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 25px;
+            background-color: #f8f9fa;
+        }
+        .container {
+            border: 1px solid #dadce0;
+            border-radius: 12px;
+            background-color: #ffffff;
+            padding: 40px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+            position: relative;
+        }
+        .lang-switcher {
+            position: sticky;
+            top: -40px;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(8px);
+            padding: 12px 0;
+            margin-bottom: 24px;
+            border-bottom: 1px solid #e0e0e0;
+            z-index: 1000;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+        }
+        .lang-select {
+            background-color: #f8f9fa;
+            border: 1px solid #dadce0;
+            color: #3c4043;
+            padding: 7px 14px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 500;
+            cursor: pointer;
+            outline: none;
+            transition: all 0.2s ease;
+        }
+        .lang-select:focus {
+            border-color: #1a73e8;
+            box-shadow: 0 0 0 3px rgba(26, 115, 232, 0.2);
+        }
+        .content-section {
+            display: none;
+        }
+        .content-section.active {
+            display: block;
+        }
+        h1, h2 {
+            color: #1f1f1f;
+            border-bottom: 1px solid #e0e0e0;
+            padding-bottom: 10px;
+            margin-top: 30px;
+        }
+        h1 {
+            font-size: 26px;
+            margin-top: 0;
+        }
+        h2 {
+            font-size: 20px;
+        }
+        h3 {
+            font-size: 16px;
+            color: #1f1f1f;
+            margin-top: 15px;
+            margin-bottom: 8px;
+        }
+        p, li {
+            font-size: 15px;
+            color: #5f6368;
+        }
+        .button-container {
+            text-align: center;
+            margin: 28px 0;
+        }
+        .button {
+            background-color: #1a73e8;
+            color: #ffffff !important;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 500;
+            display: inline-block;
+            transition: background-color 0.2s, box-shadow 0.2s;
+        }
+        .button:hover {
+            background-color: #185abc;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+        }
+        .note {
+            background-color: #e8f0fe;
+            border-left: 4px solid #1a73e8;
+            padding: 18px 20px;
+            margin: 20px 0;
+            border-radius: 6px;
+        }
+        .note p {
+            margin: 0;
+            color: #202124;
+        }
+        .note ul {
+            margin-top: 10px;
+            margin-bottom: 0;
+            padding-left: 20px;
+            color: #202124;
+        }
+        .note li {
+            color: #202124;
+            font-size: 14px;
+            margin-bottom: 8px;
+        }
+        ol {
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 12px;
+        }
+        code {
+            background-color: #f1f3f4;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'Roboto Mono', monospace;
+            color: #202124;
+            font-size: 13px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Selettore Lingua a Tendina -->
+        <div class="lang-switcher">
+            <select id="lang-select" class="lang-select">
+                <option value="en">English (EN)</option>
+                <option value="it">Italiano (IT)</option>
+                <option value="es">Español (ES)</option>
+                <option value="pt_BR">Português - Brasil (PT-BR)</option>
+                <option value="ja">日本語 (JA)</option>
+                <option value="ko">한국어 (KO)</option>
+                <option value="zh_CN">简体中文 (ZH-CN)</option>
+                <option value="zh_TW">繁體中文 (ZH-TW)</option>
+            </select>
+        </div>
+
+        <!-- ENGLISH (EN) -->
+        <div id="content-en" class="content-section active" lang="en">
+            <h1>Guide to Getting Your Gemini API Key</h1>
+            <p>This guide will show you how to get a free API key from Google AI Studio to enable the "Organize Chats with AI" feature in the <strong>Gemini Chat Folders</strong> extension.</p>
+            
+            <div class="note">
+                <h3>FAQ: Privacy &amp; How it Works</h3>
+                <p>Before proceeding, it's important to understand how your data is handled:</p>
+                <ul>
+                    <li><strong>Why an API Key?</strong> The extension needs to communicate with Google's AI to suggest folder structures. Using your own free key allows the extension to make a direct connection from your browser to Google, bypassing any third-party servers.</li>
+                    <li><strong>What data is sent?</strong> <strong>ONLY the titles</strong> of your unorganized chats and the names of your existing folders. The extension <strong>never accesses, reads, or transmits the contents/messages</strong> of your conversations.</li>
+                    <li><strong>Where is the key stored?</strong> The key is saved locally in your browser using Chrome's native and secure sync storage (<code>chrome.storage.sync</code>). It is never shared with the developer.</li>
+                    <li><strong>How does the AI feature work?</strong> 1) The extension lists your uncategorized chats. 2) You select which ones to process. 3) The AI analyzes the titles and suggests a folder tree. 4) You review a visual preview and must manually approve the changes before they are applied.</li>
+                </ul>
+            </div>
+
+            <h2>Step 1: Go to Google AI Studio</h2>
+            <p>First, visit the official Google AI Studio page for managing API keys. You may be asked to sign in with your Google account.</p>
+            <div class="button-container">
+                <a href="https://aistudio.google.com/app/apikey" target="_blank" class="button">Go to Google AI Studio</a>
+            </div>
+
+            <h2>Step 2: Create the API Key</h2>
+            <p>Once on the page, the process is very straightforward.</p>
+            <ol>
+                <li>Look for and click the <strong>"Create API key"</strong> button.</li>
+                <li>In the window that appears, Google will ask you to create a new Cloud project. This is normal and necessary. Simply click the <strong>"Create API key in new project"</strong> button.</li>
+            </ol>
+
+            <h2>Step 3: Copy Your New Key</h2>
+            <p>Congratulations! Your API key has been generated. Now you just need to copy it.</p>
+            <ol>
+                <li>The key will appear in a list. It's a long string of text and numbers.</li>
+                <li>Click the copy icon (it usually looks like two overlapping squares) next to the key string to copy it to your clipboard.</li>
+            </ol>
+            <div class="note">
+                <p><strong>Warning:</strong> Treat this key like a password. Do not share it publicly.</p>
+            </div>
+
+            <h2>Step 4: Enter the Key in the Extension</h2>
+            <p>Now, return to the Gemini page and open the extension's settings.</p>
+            <ol>
+                <li>In the Gemini interface, click the three-dot menu in the "Folders" panel and select <strong>"Settings"</strong>.</li>
+                <li>In the <strong>API</strong> tab, paste the key you just copied into the <code>Gemini API Key</code> field.</li>
+                <li>Click <strong>"Save and Verify"</strong>. If everything is correct, you will see a confirmation message.</li>
+            </ol>
+
+            <p>You're all set! You can now use the powerful AI organization feature for your chats.</p>
+        </div>
+
+        <!-- ITALIANO (IT) -->
+        <div id="content-it" class="content-section" lang="it">
+            <h1>Guida per Ottenere la tua Chiave API di Gemini</h1>
+            <p>Questa guida ti mostrerà come ottenere una chiave API gratuita da Google AI Studio per abilitare la funzione "Organizza Chat con IA" nell'estensione <strong>Gemini Chat Folders</strong>.</p>
+            
+            <div class="note">
+                <h3>FAQ: Privacy e Come Funziona</h3>
+                <p>Prima di procedere, è importante capire come vengono trattati i tuoi dati:</p>
+                <ul>
+                    <li><strong>Perché serve una Chiave API?</strong> L'estensione deve comunicare con l'IA di Google per suggerirti l'albero delle cartelle. Usando la tua chiave personale gratuita, l'estensione si collega direttamente dal tuo browser a Google, eliminando la necessità di server intermedi di terze parti.</li>
+                    <li><strong>Quali dati vengono inviati?</strong> <strong>ESCLUSIVAMENTE i titoli</strong> delle tue chat non organizzate e i nomi delle cartelle esistenti. L'estensione <strong>non accede, non legge e non trasmette MAI il contenuto o i messaggi</strong> delle tue conversazioni.</li>
+                    <li><strong>Dove viene salvata la chiave?</strong> La chiave viene salvata localmente nel tuo browser utilizzando l'archivio sicuro nativo di Chrome (<code>chrome.storage.sync</code>). Non viene mai condivisa con lo sviluppatore.</li>
+                    <li><strong>Come funziona la funzione IA?</strong> 1) L'estensione elenca le tue chat non categorizzate. 2) Scegli tu quali elaborare. 3) L'IA analizza i titoli e suggerisce una struttura. 4) Ti viene mostrata un'anteprima visiva interattiva e dovrai confermare manualmente prima che qualsiasi modifica venga applicata.</li>
+                </ul>
+            </div>
+
+            <h2>Passaggio 1: Accedi a Google AI Studio</h2>
+            <p>Per prima cosa, visita la pagina ufficiale di Google AI Studio per la gestione delle chiavi API. Potrebbe esserti richiesto di accedere con il tuo account Google.</p>
+            <div class="button-container">
+                <a href="https://aistudio.google.com/app/apikey" target="_blank" class="button">Vai a Google AI Studio</a>
+            </div>
+
+            <h2>Passaggio 2: Crea la Chiave API</h2>
+            <p>Una volta nella pagina, il processo è molto semplice.</p>
+            <ol>
+                <li>Cerca e clicca sul pulsante <strong>"Create API key"</strong> (Crea chiave API).</li>
+                <li>Nella finestra che appare, Google ti chiederà di creare un nuovo progetto Cloud. Questo è normale e necessario. Clicca semplicemente sul pulsante <strong>"Create API key in new project"</strong> (Crea chiave API in un nuovo progetto).</li>
+            </ol>
+
+            <h2>Passaggio 3: Copia la tua Nuova Chiave</h2>
+            <p>Congratulazioni! La tua chiave API è stata generata. Ora devi solo copiarla.</p>
+            <ol>
+                <li>La chiave apparirà in una lista. È una lunga stringa di testo e numeri.</li>
+                <li>Clicca sull'icona per copiare la chiave (di solito ha l'aspetto di due fogli sovrapposti) accanto alla stringa della chiave per copiarla negli appunti.</li>
+            </ol>
+            <div class="note">
+                <p><strong>Attenzione:</strong> Tratta questa chiave come una password. Non condividerla pubblicamente.</p>
+            </div>
+
+            <h2>Passaggio 4: Inserisci la Chiave nell'Estensione</h2>
+            <p>Ora torna alla pagina di Gemini e apri le impostazioni dell'estensione.</p>
+            <ol>
+                <li>Nell'interfaccia di Gemini, clicca sul menu con i tre puntini nel pannello "Folders" e seleziona <strong>"Impostazioni"</strong>.</li>
+                <li>Nella scheda <strong>API</strong>, incolla la chiave che hai appena copiato nel campo <code>Chiave API Gemini</code>.</li>
+                <li>Clicca su <strong>"Salva e Verifica"</strong>. Se tutto è corretto, vedrai un messaggio di conferma.</li>
+            </ol>
+
+            <p>Hai finito! Ora puoi usare la potente funzione di organizzazione automatica con IA per le tue chat.</p>
+        </div>
+
+        <!-- ESPAÑOL (ES) -->
+        <div id="content-es" class="content-section" lang="es">
+            <h1>Guía para Obtener tu Clave API de Gemini</h1>
+            <p>Esta guía te mostrará cómo obtener una clave API gratuita de Google AI Studio para habilitar la función "Organizar Chats con IA" en la extensión <strong>Gemini Chat Folders</strong>.</p>
+            
+            <div class="note">
+                <h3>Preguntas Frecuentes: Privacidad y Funcionamiento</h3>
+                <p>Antes de continuar, es importante comprender cómo se gestionan tus datos:</p>
+                <ul>
+                    <li><strong>¿Por qué se necesita una Clave API?</strong> La extensión necesita comunicarse con la IA de Google para sugerirte una estructura de carpetas. Al usar tu clave personal gratuita, la extensión se conecta directamente desde tu navegador a Google, eliminando la necesidad de servidores de terceros.</li>
+                    <li><strong>¿Qué datos se envían?</strong> <strong>EXCLUSIVAMENTE los títulos</strong> de tus chats no organizados y los nombres de las carpetas existentes. La extensión <strong>NUNCA accede, lee ni transmite el contenido o los mensajes</strong> de tus conversaciones.</li>
+                    <li><strong>¿Dónde se guarda la clave?</strong> La clave se guarda localmente en tu navegador utilizando el almacenamiento seguro de Chrome (<code>chrome.storage.sync</code>). Jamás se comparte con el desarrollador.</li>
+                    <li><strong>¿Cómo funciona la función de IA?</strong> 1) La extensión lista tus chats sin categorizar. 2) Eliges cuáles procesar. 3) La IA analiza los títulos y sugiere un árbol de carpetas. 4) Se te muestra una vista previa visual interactiva y debes confirmar manualmente antes de que se aplique cualquier cambio.</li>
+                </ul>
+            </div>
+
+            <h2>Paso 1: Accede a Google AI Studio</h2>
+            <p>Primero, visita la página oficial de Google AI Studio para la gestión de claves API. Es posible que debas iniciar sesión con tu cuenta de Google.</p>
+            <div class="button-container">
+                <a href="https://aistudio.google.com/app/apikey" target="_blank" class="button">Ir a Google AI Studio</a>
+            </div>
+
+            <h2>Paso 2: Crea la Clave API</h2>
+            <p>Una vez en la página, el proceso es muy sencillo.</p>
+            <ol>
+                <li>Busca y haz clic en el botón <strong>"Create API key"</strong> (Crear clave API).</li>
+                <li>En la ventana emergente, Google te solicitará crear un nuevo proyecto Cloud. Esto es normal y necesario. Simplemente haz clic en <strong>"Create API key in new project"</strong> (Crear clave API en un nuevo proyecto).</li>
+            </ol>
+
+            <h2>Paso 3: Copia tu Nueva Clave</h2>
+            <p>¡Felicitaciones! Tu clave API ha sido generada. Ahora solo debes copiarla.</p>
+            <ol>
+                <li>La clave aparecerá en una lista. Es una cadena larga de letras y números.</li>
+                <li>Haz clic en el icono de copiar situado junto a la clave para guardarla en el portapapeles.</li>
+            </ol>
+            <div class="note">
+                <p><strong>Atención:</strong> Trata esta clave como una contraseña. No la compartas públicamente.</p>
+            </div>
+
+            <h2>Paso 4: Introduce la Clave en la Extensión</h2>
+            <p>Ahora regresa a la página de Gemini y abre la configuración de la extensión.</p>
+            <ol>
+                <li>En la interfaz de Gemini, haz clic en el menú de tres puntos del panel "Folders" y selecciona <strong>"Configuración"</strong>.</li>
+                <li>En la pestaña <strong>API</strong>, pega la clave que acabas de copiar en el campo <code>Clave API Gemini</code>.</li>
+                <li>Haz clic en <strong>"Guardar y Verificar"</strong>. Si todo es correcto, verás un mensaje de confirmación.</li>
+            </ol>
+
+            <p>¡Todo listo! Ya puedes disfrutar de la potente función de organización automática con IA para tus chats.</p>
+        </div>
+
+        <!-- PORTUGUÊS BRASIL (PT_BR) -->
+        <div id="content-pt_BR" class="content-section" lang="pt-BR">
+            <h1>Guia para Obter sua Chave de API do Gemini</h1>
+            <p>Este guia mostrará como obter uma chave de API gratuita no Google AI Studio para ativar o recurso "Organizar Conversas com IA" na extensão <strong>Gemini Chat Folders</strong>.</p>
+            
+            <div class="note">
+                <h3>Perguntas Frequentes: Privacidade e Funcionamento</h3>
+                <p>Antes de prosseguir, é essencial compreender como seus dados são tratados:</p>
+                <ul>
+                    <li><strong>Por que uma Chave de API?</strong> A extensão precisa se comunicar com a IA do Google para sugerir estruturas de pastas. Usando sua chave gratuita, a extensão conecta-se diretamente do seu navegador ao Google, eliminando intermediários.</li>
+                    <li><strong>Quais dados são enviados?</strong> <strong>EXCLUSIVAMENTE os títulos</strong> das suas conversas não organizadas e os nomes das pastas existentes. A extensão <strong>NUNCA acessa, lê ou envia o conteúdo das mensagens</strong> ou conversas.</li>
+                    <li><strong>Onde a chave fica salva?</strong> A chave é armazenada localmente no seu navegador através do armazenamento sincronizado e seguro do Chrome (<code>chrome.storage.sync</code>). Ela nunca é compartilhada com o desenvolvedor.</li>
+                    <li><strong>Como funciona a IA?</strong> 1) A extensão lista as conversas não categorizadas. 2) Você escolhe quais deseja organizar. 3) A IA analisa apenas os títulos e sugere pastas. 4) Você visualiza uma prévia interativa e aprova manualmente antes de salvar.</li>
+                </ul>
+            </div>
+
+            <h2>Passo 1: Acessar o Google AI Studio</h2>
+            <p>Primeiro, acesse a página oficial do Google AI Studio para gerenciar suas chaves de API. Pode ser necessário fazer login na sua conta do Google.</p>
+            <div class="button-container">
+                <a href="https://aistudio.google.com/app/apikey" target="_blank" class="button">Acessar Google AI Studio</a>
+            </div>
+
+            <h2>Passo 2: Criar a Chave de API</h2>
+            <p>Na página, o procedimento é muito simples e direto.</p>
+            <ol>
+                <li>Localize e clique no botão <strong>"Create API key"</strong> (Criar chave de API).</li>
+                <li>Na janela seguinte, o Google solicitará a criação de um novo projeto Cloud. Isso é normal e obrigatório. Basta clicar em <strong>"Create API key in new project"</strong>.</li>
+            </ol>
+
+            <h2>Passo 3: Copiar sua Nova Chave</h2>
+            <p>Parabéns! Sua chave de API foi gerada. Agora só resta copiá-la.</p>
+            <ol>
+                <li>A chave será listada como uma longa sequência de caracteres alfanuméricos.</li>
+                <li>Clique no ícone de cópia ao lado da chave para copiá-la para a sua área de transferência.</li>
+            </ol>
+            <div class="note">
+                <p><strong>Atenção:</strong> Trate esta chave como uma senha. Nunca a compartilhe publicamente.</p>
+            </div>
+
+            <h2>Passo 4: Inserir a Chave na Extensão</h2>
+            <p>Agora retorne à página do Gemini e abra as configurações da extensão.</p>
+            <ol>
+                <li>Na interface do Gemini, clique no menu de três pontos no painel "Folders" e selecione <strong>"Configurações"</strong>.</li>
+                <li>Na aba <strong>API</strong>, cole a chave recém-copiada no campo <code>Chave de API Gemini</code>.</li>
+                <li>Clique em <strong>"Salvar e Verificar"</strong>. Se estiver tudo correto, você verá uma mensagem de confirmação.</li>
+            </ol>
+
+            <p>Tudo pronto! Você já pode usufruir da poderosa funcionalidade de organização inteligente com IA para suas conversas.</p>
+        </div>
+
+        <!-- 日本語 (JA) -->
+        <div id="content-ja" class="content-section" lang="ja">
+            <h1>Gemini APIキー取得ガイド</h1>
+            <p>本ガイドでは、<strong>Gemini Chat Folders</strong> 拡張機能の「AIによるチャット自動整理」機能を利用するための、Google AI Studio での無料APIキー取得手順をご案内します。</p>
+            
+            <div class="note">
+                <h3>よくある質問：プライバシーと仕組みについて</h3>
+                <p>作業を開始する前に、データの取り扱いについてご確認ください：</p>
+                <ul>
+                    <li><strong>なぜAPIキーが必要なのですか？</strong> 拡張機能がGoogleのAIと直接通信してフォルダー構成を提案するためです。ユーザー個人の無料キーを使用することで、サードパーティのサーバーを経由せずブラウザからGoogleへ直接接続します。</li>
+                    <li><strong>どのようなデータが送信されますか？</strong> <strong>未分類チャットの「タイトル」および既存フォルダー名「のみ」</strong>です。会話の本文、メッセージ内容、プロンプトテキストを拡張機能が<strong>閲覧、取得、または外部送信することは絶対にありません</strong>。</li>
+                    <li><strong>キーはどこに保存されますか？</strong> APIキーはChromeの安全な同期ストレージ（<code>chrome.storage.sync</code>）を使用してブラウザ内にローカル保存されます。開発者側に送信されることは一切ありません。</li>
+                    <li><strong>AI自動整理の流れは？</strong> 1) 未分類チャット一覧を表示。2) 整理したいチャットを選択。3) AIがタイトルを分析しフォルダーツリーを提案。4) プレビュー画面で確認し、手動承認後に初めて適用されます。</li>
+                </ul>
+            </div>
+
+            <h2>ステップ 1: Google AI Studio にアクセス</h2>
+            <p>まず、Google AI Studio の公式APIキー管理ページにアクセスします。Googleアカウントへのログインを求められる場合があります。</p>
+            <div class="button-container">
+                <a href="https://aistudio.google.com/app/apikey" target="_blank" class="button">Google AI Studio を開く</a>
+            </div>
+
+            <h2>ステップ 2: APIキーを作成</h2>
+            <p>画面が開いたら、手順はとてもシンプルです。</p>
+            <ol>
+                <li>画面内の <strong>「Create API key」</strong> ボタンをクリックします。</li>
+                <li>表示されたウィンドウで新しいCloudプロジェクトの作成が求められます。これは正常な手順です。<strong>「Create API key in new project」</strong> ボタンをクリックしてください。</li>
+            </ol>
+
+            <h2>ステップ 3: 作成したキーをコピー</h2>
+            <p>APIキーが正常に発行されました。クリップボードにコピーしましょう。</p>
+            <ol>
+                <li>リストに英数字の長いキー文字列が表示されます。</li>
+                <li>文字列の横にあるコピーアイコン（四角が重なったマーク）をクリックしてコピーします。</li>
+            </ol>
+            <div class="note">
+                <p><strong>注意:</strong> このキーはパスワードと同様に大切に扱い、他人に公開しないでください。</p>
+            </div>
+
+            <h2>ステップ 4: 拡張機能の設定にキーを入力</h2>
+            <p>Geminiの画面に戻り、拡張機能の設定画面を開きます。</p>
+            <ol>
+                <li>Gemini画面の「Folders」パネル右上にある3点メニューをクリックし、<strong>「設定」</strong> を選択します。</li>
+                <li><strong>API</strong> タブを開き、<code>Gemini APIキー</code> 入力欄にコピーしたキーを貼り付けます。</li>
+                <li><strong>「保存して確認」</strong> をクリックします。キーが正しければ確認メッセージが表示されます。</li>
+            </ol>
+
+            <p>設定完了です！これでAIによるスマートな自動フォルダー整理をお使いいただけます。</p>
+        </div>
+
+        <!-- 한국어 (KO) -->
+        <div id="content-ko" class="content-section" lang="ko">
+            <h1>Gemini API 키 발급 및 설정 가이드</h1>
+            <p>본 가이드는 <strong>Gemini Chat Folders</strong> 확장 프로그램의 "AI 스마트 폴더 정리" 기능을 활성화하기 위해 Google AI Studio에서 무료 API 키를 발급받는 방법을 안내합니다.</p>
+            
+            <div class="note">
+                <h3>자주 묻는 질문: 개인정보 보호 및 작동 방식</h3>
+                <p>시작하기 전에 데이터가 어떻게 안전하게 처리되는지 확인하세요:</p>
+                <ul>
+                    <li><strong>왜 API 키가 필요한가요?</strong> 확장 프로그램이 Google AI와 직접 통신하여 폴더 구조를 추천하기 위함입니다. 개인 무료 키를 사용하면 제3자 서버를 거치지 않고 브라우저에서 Google로 직접 안전하게 연결됩니다.</li>
+                    <li><strong>어떤 데이터가 전송되나요?</strong> <strong>오직 미분류 대화의 '제목'과 기존 폴더 이름만</strong> 전송됩니다. 확장 프로그램은 대화 본문이나 메시지 내용을 <strong>절대로 읽거나 전송하지 않습니다</strong>.</li>
+                    <li><strong>키는 어디에 저장되나요?</strong> 키는 Chrome의 안전한 동기화 저장소(<code>chrome.storage.sync</code>)를 통해 브라우저 내부에만 로컬로 저장되며 개발자에게 전송되지 않습니다.</li>
+                    <li><strong>AI 분류는 어떻게 작동하나요?</strong> 1) 미분류 대화 목록 표시 2) 처리할 대화 선택 3) AI가 제목을 분석해 폴더 구조 제안 4) 시각적 미리보기를 검토한 후 수동으로 승인해야만 실제로 적용됩니다.</li>
+                </ul>
+            </div>
+
+            <h2>1단계: Google AI Studio 접속</h2>
+            <p>먼저 공식 Google AI Studio API 키 관리 페이지에 접속합니다. Google 계정 로그인이 필요할 수 있습니다.</p>
+            <div class="button-container">
+                <a href="https://aistudio.google.com/app/apikey" target="_blank" class="button">Google AI Studio 바로가기</a>
+            </div>
+
+            <h2>2단계: API 키 생성</h2>
+            <p>페이지에 접속한 후 간단한 절차로 키를 생성할 수 있습니다.</p>
+            <ol>
+                <li>화면의 <strong>"Create API key"</strong> 버튼을 클릭합니다.</li>
+                <li>팝업 창이 나타나면 새 Cloud 프로젝트 생성을 위해 <strong>"Create API key in new project"</strong> 버튼을 누릅니다.</li>
+            </ol>
+
+            <h2>3단계: 생성된 키 복사</h2>
+            <p>API 키 생성이 완료되었습니다. 이제 키를 복사합니다.</p>
+            <ol>
+                <li>목록에 영문과 숫자로 이루어진 긴 문자열이 표시됩니다.</li>
+                <li>키 옆의 복사 아이콘을 눌러 클립보드에 복사하세요.</li>
+            </ol>
+            <div class="note">
+                <p><strong>주의:</strong> 이 키는 비밀번호처럼 안전하게 다루어야 하며 외부에 절대 공개하지 마세요.</p>
+            </div>
+
+            <h2>4단계: 확장 프로그램 설정에 키 입력</h2>
+            <p>이제 Gemini 페이지로 돌아와 확장 프로그램 설정을 엽니다.</p>
+            <ol>
+                <li>Gemini 화면의 "Folders" 패널 상단 더보기(3개 점) 메뉴에서 <strong>"설정"</strong>을 클릭합니다.</li>
+                <li><strong>API</strong> 탭을 선택하고 <code>Gemini API 키</code> 필드에 복사한 키를 붙여넣습니다.</li>
+                <li><strong>"저장 및 확인"</strong>을 클릭합니다. 정상 확인되면 완료 메시지가 표시됩니다.</li>
+            </ol>
+
+            <p>모든 설정이 끝났습니다! 이제 편리한 AI 자동 정리 기능을 마음껏 이용해 보세요.</p>
+        </div>
+
+        <!-- 简体中文 (ZH_CN) -->
+        <div id="content-zh_CN" class="content-section" lang="zh-CN">
+            <h1>获取 Gemini API 密钥操作指南</h1>
+            <p>本指南将指引您在 Google AI Studio 中申请免费的 API 密钥，以开启 <strong>Gemini Chat Folders</strong> 扩展中的“AI 智能对话整理”功能。</p>
+            
+            <div class="note">
+                <h3>常见问题：隐私安全与运作原理</h3>
+                <p>在开始之前，请了解您的数据是如何被安全保护的：</p>
+                <ul>
+                    <li><strong>为什么需要 API 密钥？</strong> 扩展需要调用 Google 官方 AI 算法为您智能规划文件夹层级。使用您自有的免费密钥，可实现浏览器与 Google 之间的点对点直接通信，完全无需第三方中转服务器。</li>
+                    <li><strong>会上传哪些数据？</strong> <strong>仅上传未整理对话的“标题”及现有文件夹名称</strong>。扩展<strong>绝不访问、读取或上传任何聊天内容与对话正文</strong>。</li>
+                    <li><strong>密钥保存在哪里？</strong> 密钥使用 Chrome 原生加密同步存储（<code>chrome.storage.sync</code>）安全存放在本地浏览器中，绝不会与开发者共享。</li>
+                    <li><strong>AI 整理是如何运作的？</strong> 1) 扩展列出未归类对话；2) 您勾选需要整理的项目；3) AI 分析标题并给出文件夹结构建议；4) 提供直观的预览面板，必须经过您的手动确认才会正式应用更改。</li>
+                </ul>
+            </div>
+
+            <h2>第一步：访问 Google AI Studio</h2>
+            <p>首先，访问 Google AI Studio 官方 API 密钥管理页面。系统可能会提示您登录 Google 账户。</p>
+            <div class="button-container">
+                <a href="https://aistudio.google.com/app/apikey" target="_blank" class="button">前往 Google AI Studio</a>
+            </div>
+
+            <h2>第二步：创建 API 密钥</h2>
+            <p>进入页面后，创建流程非常清晰直接：</p>
+            <ol>
+                <li>找到并点击 <strong>"Create API key"</strong>（创建 API 密钥）按钮。</li>
+                <li>在弹出的窗口中，点击 <strong>"Create API key in new project"</strong>（在新项目中创建 API 密钥）。这是 Google 的正常标准流程。</li>
+            </ol>
+
+            <h2>第三步：复制新生成的密钥</h2>
+            <p>恭喜！您的 API 密钥已成功生成，现在只需将其复制下来：</p>
+            <ol>
+                <li>列表中将展示一串由英文字母和数字组成的长密钥。</li>
+                <li>点击密钥右侧的复制图标（通常为两个重叠方框），将其复制到剪贴板。</li>
+            </ol>
+            <div class="note">
+                <p><strong>警告提醒：</strong> 请像对待密码一样妥善保管此密钥，切勿公开分享。</p>
+            </div>
+
+            <h2>第四步：在扩展设置中填入密钥</h2>
+            <p>现在返回 Gemini 页面，打开扩展设置：</p>
+            <ol>
+                <li>在 Gemini 界面中，点击“Folders”面板右上角的三个点菜单，选择 <strong>“设置”</strong>。</li>
+                <li>切换到 <strong>API</strong> 标签页，将刚复制的密钥粘贴到 <code>Gemini API 密钥</code> 输入框中。</li>
+                <li>点击 <strong>“保存并测试”</strong>。若验证无误，您将看到成功的确认提示。</li>
+            </ol>
+
+            <p>大功告成！您现在可以使用强大的 AI 智能自动归类功能整理历史对话了。</p>
+        </div>
+
+        <!-- 繁體中文 (ZH_TW) -->
+        <div id="content-zh_TW" class="content-section" lang="zh-TW">
+            <h1>取得 Gemini API 金鑰操作指南</h1>
+            <p>本指南將引導您於 Google AI Studio 申請免費的 API 金鑰，以在 <strong>Gemini Chat Folders</strong> 擴充功能中啟用「AI 智慧對話整理」功能。</p>
+            
+            <div class="note">
+                <h3>常見問題：隱私安全與運作原理</h3>
+                <p>在開始設定前，請先了解您的資料是如何受到嚴密保護：</p>
+                <ul>
+                    <li><strong>為什麼需要 API 金鑰？</strong> 擴充功能需要調用 Google AI 演算法為您規劃資料夾階層。使用您專屬的免費金鑰，可直接從本機瀏覽器連線至 Google 官方伺服器，完全不經過任何第三方伺服器。</li>
+                    <li><strong>會傳送哪些資料？</strong> <strong>僅傳送未分類對話的「標題」與現有資料夾名稱</strong>。擴充功能<strong>絕不讀取、儲存或傳送任何對話內容、訊息或提示詞</strong>。</li>
+                    <li><strong>金鑰儲存在哪裡？</strong> 金鑰透過 Chrome 原生安全同步儲存區（<code>chrome.storage.sync</code>）加密保存於本機瀏覽器中，絕不與開發者共享。</li>
+                    <li><strong>AI 整理如何進行？</strong> 1) 擴充功能列出未分類對話；2) 由您勾選欲處理的項目；3) AI 分析標題並建議資料夾架構；4) 呈現互動預覽面板，必須由您手動確認後才會套用變更。</li>
+                </ul>
+            </div>
+
+            <h2>第一步：前往 Google AI Studio</h2>
+            <p>首先，開啟 Google AI Studio 官方金鑰管理頁面。系統可能會要求登入您的 Google 帳號。</p>
+            <div class="button-container">
+                <a href="https://aistudio.google.com/app/apikey" target="_blank" class="button">前往 Google AI Studio</a>
+            </div>
+
+            <h2>第二步：建立 API 金鑰</h2>
+            <p>進入頁面後，建立步驟非常直覺簡單：</p>
+            <ol>
+                <li>點選頁面中的 <strong>「Create API key」</strong>（建立 API 金鑰）按鈕。</li>
+                <li>在跳出的視窗中，點選 <strong>「Create API key in new project」</strong>（在新專案中建立 API 金鑰）。此為 Google 標準必要程序。</li>
+            </ol>
+
+            <h2>第三步：複製新產生的金鑰</h2>
+            <p>恭喜！您的 API 金鑰已成功發行，現在只需將其複製：</p>
+            <ol>
+                <li>清單中將顯示一串由英文與數字組成的金鑰字串。</li>
+                <li>點擊金鑰旁邊的複製圖示（兩個重疊的方框符號），複製至剪貼簿中。</li>
+            </ol>
+            <div class="note">
+                <p><strong>安全警告：</strong> 請將此金鑰視同密碼妥善保管，切勿公開分享。</p>
+            </div>
+
+            <h2>第四步：於擴充功能設定中輸入金鑰</h2>
+            <p>現在返回 Gemini 頁面，開啟擴充功能設定：</p>
+            <ol>
+                <li>在 Gemini 介面中，點選「Folders」面板右上角的三個點選單，選擇 <strong>「設定」</strong>。</li>
+                <li>切換至 <strong>API</strong> 分頁，在 <code>Gemini API 金鑰</code> 欄位貼上剛才複製的金鑰。</li>
+                <li>點選 <strong>「儲存並驗證」</strong>。若連線成功，系統會顯示綠色確認訊息。</li>
+            </ol>
+
+            <p>設定全部完成！您現在可以立即體驗強大的 AI 自動分類與對話整理功能了。</p>
+        </div>
+    </div>
+
+    <script>
+        function setLanguage(lang) {
+            const select = document.getElementById('lang-select');
+            if (select && select.value !== lang) {
+                select.value = lang;
+            }
+
+            const sections = document.querySelectorAll('.content-section');
+            sections.forEach(s => {
+                if (s.id === 'content-' + lang) {
+                    s.classList.add('active');
+                } else {
+                    s.classList.remove('active');
+                }
+            });
+
+            document.documentElement.lang = lang.replace('_', '-');
+        }
+
+        document.getElementById('lang-select')?.addEventListener('change', (e) => {
+            setLanguage(e.target.value);
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Auto-rilevamento della lingua del browser
+        const userLang = (navigator.language || 'en').toLowerCase();
+        let initialLang = 'en';
+        if (userLang.startsWith('it')) initialLang = 'it';
+        else if (userLang.startsWith('es')) initialLang = 'es';
+        else if (userLang.startsWith('pt')) initialLang = 'pt_BR';
+        else if (userLang.startsWith('ja')) initialLang = 'ja';
+        else if (userLang.startsWith('ko')) initialLang = 'ko';
+        else if (userLang.includes('tw') || userLang.includes('hk') || userLang.includes('hant')) initialLang = 'zh_TW';
+        else if (userLang.startsWith('zh')) initialLang = 'zh_CN';
+
+        setLanguage(initialLang);
+    </script>
+</body>
+</html>
