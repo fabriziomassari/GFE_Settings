@@ -13,3 +13,7 @@ accessibili con link Github Pages, che ha come root "/docs":
 ## pagina per la privacy policy
 
 * https://fabriziomassari.github.io/GFE_Settings/PrivacyPolicyGFE.html
+
+## Guida per ottenere Google API Key
+
+* https://fabriziomassari.github.io/GFE_Settings/gemini-chat-folders-api-key-guide.html
