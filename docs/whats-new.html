@@ -669,7 +669,10 @@
 
     (function() {
       try {
-        const version = urlParams.get('v') || urlParams.get('version') || '5.17.12';
+        const isManual = urlParams.get('source') === 'manual' || urlParams.get('manual') === '1';
+        if (!isManual) return;
+
+        const version = urlParams.get('v') || urlParams.get('version') || '5.17.18';
         fetch('https://eu.i.posthog.com/capture/', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
@@ -678,6 +681,35 @@
             event: 'whats_new_viewed',
             distinct_id: 'non_disponibile',
             properties: {
+              version: version,
+              browser_language: (typeof navigator !== 'undefined' ? navigator.language : ''),
+              $ip: null,
+              source: 'manual'
+            }
+          })
+        }).catch(function() {});
+      } catch (e) {}
+    })();
+
+    // Tracciamento del censimento anonimo una tantum per installazioni storiche:
+    // Scatta SOLO ed ESCLUSIVAMENTE se l'URL contiene il parametro ?census=1 o ?census=true.
+    (function() {
+      try {
+        const isCensus = urlParams.get('census') === '1' || urlParams.get('census') === 'true';
+        if (!isCensus) return;
+
+        const version = urlParams.get('v') || urlParams.get('version') || '5.17.18';
+        fetch('https://eu.i.posthog.com/capture/', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            api_key: 'phc_zebLXH5VGh9AQtGzz3bDkgRPYz83AHvBw3Ao78h6qmca',
+            event: 'extension_census',
+            distinct_id: 'non_disponibile',
+            properties: {
+              distinct_id: 'non_disponibile',
+              user_id: 'non_disponibile',
+              device_id: 'non_disponibile',
               version: version,
               browser_language: (typeof navigator !== 'undefined' ? navigator.language : ''),
               $ip: null,
