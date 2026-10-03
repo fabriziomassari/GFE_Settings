@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "configVersion": "2026.10.01.1",
+  "configVersion": "2026.10.03.1",
   "minExtensionVersion": "5.12.0",
   "ttlHours": 6,
   "selectors": {
@@ -35,7 +35,10 @@
       "granularity": "macro",
       "dailyMaxEvents": 50,
       "dailyMaxErrors": 5,
-      "errorTracking": true
+      "errorTracking": true,
+      "reconciliation": {
+        "enabled": true
+      }
     }
   }
 }
